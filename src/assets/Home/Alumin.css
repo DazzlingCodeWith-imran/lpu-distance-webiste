@@ -1,0 +1,656 @@
+/* ============================================================
+   ALUMNI SECTION — Complete CSS
+   ============================================================ */
+
+.alumni-section {
+    padding: 80px 0;
+    background: #F1F5F9;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decorations */
+.alumni-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatBg 20s ease-in-out infinite;
+}
+
+.alumni-section::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatBg 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatBg {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -20px); }
+    66% { transform: translate(-20px, 30px); }
+}
+
+.alumni-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.alumni-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.alumni-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    animation: pulseBadge 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.alumni-badge i {
+    font-size: 14px;
+}
+
+.alumni-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.alumni-title span {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.alumni-subtitle {
+    font-size: 16px;
+    color: #64748B;
+    max-width: 550px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+}
+
+.alumni-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.alumni-divider span {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #F97316, transparent);
+    border-radius: 999px;
+}
+
+.alumni-divider i {
+    font-size: 18px;
+    color: #F97316;
+    animation: iconSpin 6s linear infinite;
+}
+
+@keyframes iconSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   CAROUSEL
+   ============================================================ */
+.alumni-carousel-wrapper {
+    position: relative;
+    padding: 0 40px;
+    margin-bottom: 24px;
+}
+
+.alumni-carousel {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.alumni-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+/* ============================================================
+   ALUMNI CARDS
+   ============================================================ */
+.alumni-card {
+    flex: 0 0 220px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F1F5F9;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.alumni-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.15);
+}
+
+/* Card Image */
+.alumni-card-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    background: #F1F5F9;
+}
+
+.alumni-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.alumni-card:hover .alumni-card-image img {
+    transform: scale(1.1);
+}
+
+.alumni-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.alumni-card-badge {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(249, 115, 22, 0.9);
+    color: #FFFFFF;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.alumni-card:hover .alumni-card-badge {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #F97316, #EA580C);
+}
+
+/* Card Body */
+.alumni-card-body {
+    padding: 14px 16px 16px;
+    text-align: center;
+    position: relative;
+}
+
+.alumni-card-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.alumni-card:hover .alumni-card-name {
+    color: #F97316;
+}
+
+.alumni-card-program {
+    font-size: 11px;
+    color: #F97316;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.alumni-card-achievement {
+    font-size: 11px;
+    color: #94A3B8;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.alumni-card-icon {
+    position: absolute;
+    bottom: -12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #F97316;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.alumni-card:hover .alumni-card-icon {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+/* ============================================================
+   NAVIGATION BUTTONS
+   ============================================================ */
+.alumni-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid #F1F5F9;
+    color: #1E293B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.alumni-nav:hover {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    border-color: #F97316;
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3);
+}
+
+.alumni-nav:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.alumni-nav i {
+    font-size: 18px;
+}
+
+.alumni-nav-prev {
+    left: -10px;
+}
+
+.alumni-nav-next {
+    right: -10px;
+}
+
+/* ============================================================
+   DOTS INDICATOR
+   ============================================================ */
+.alumni-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.alumni-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #E2E8F0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 0;
+}
+
+.alumni-dot:hover {
+    background: #F97316;
+    transform: scale(1.2);
+}
+
+.alumni-dot.active {
+    width: 30px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+}
+
+/* ============================================================
+   FOOTER / CTA
+   ============================================================ */
+.alumni-footer {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.alumni-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.alumni-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.8s ease;
+}
+
+.alumni-btn-primary:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+.alumni-btn-primary:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(249, 115, 22, 0.45);
+}
+
+.alumni-btn-primary i:last-child {
+    transition: all 0.3s ease;
+}
+
+.alumni-btn-primary:hover i:last-child {
+    transform: translateX(6px);
+}
+
+.alumni-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E293B;
+    background: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid #F1F5F9;
+}
+
+.alumni-btn-secondary:hover {
+    border-color: #F97316;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.08);
+}
+
+.alumni-btn-secondary i {
+    color: #F97316;
+    transition: all 0.3s ease;
+}
+
+.alumni-btn-secondary:hover i {
+    transform: translateX(-4px) rotate(-10deg);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1199px) {
+    .alumni-card {
+        flex: 0 0 200px;
+    }
+}
+
+@media (max-width: 991px) {
+    .alumni-section {
+        padding: 60px 0;
+    }
+    
+    .alumni-card {
+        flex: 0 0 180px;
+    }
+    
+    .alumni-card-image {
+        height: 160px;
+    }
+    
+    .alumni-nav {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .alumni-nav i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 767px) {
+    .alumni-section {
+        padding: 48px 0;
+    }
+    
+    .alumni-container {
+        padding: 0 16px;
+    }
+    
+    .alumni-carousel-wrapper {
+        padding: 0 30px;
+    }
+    
+    .alumni-card {
+        flex: 0 0 160px;
+    }
+    
+    .alumni-card-image {
+        height: 140px;
+    }
+    
+    .alumni-card-body {
+        padding: 10px 12px 12px;
+    }
+    
+    .alumni-card-name {
+        font-size: 12px;
+    }
+    
+    .alumni-card-program {
+        font-size: 10px;
+    }
+    
+    .alumni-card-achievement {
+        font-size: 10px;
+    }
+    
+    .alumni-nav {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .alumni-nav i {
+        font-size: 12px;
+    }
+    
+    .alumni-nav-prev {
+        left: -5px;
+    }
+    
+    .alumni-nav-next {
+        right: -5px;
+    }
+    
+    .alumni-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .alumni-btn-primary,
+    .alumni-btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575px) {
+    .alumni-section {
+        padding: 40px 0;
+    }
+    
+    .alumni-title {
+        font-size: 24px;
+    }
+    
+    .alumni-subtitle {
+        font-size: 13px;
+    }
+    
+    .alumni-carousel-wrapper {
+        padding: 0 20px;
+    }
+    
+    .alumni-card {
+        flex: 0 0 140px;
+    }
+    
+    .alumni-card-image {
+        height: 120px;
+    }
+    
+    .alumni-card-body {
+        padding: 8px 10px 10px;
+    }
+    
+    .alumni-card-name {
+        font-size: 11px;
+    }
+    
+    .alumni-card-program {
+        font-size: 9px;
+    }
+    
+    .alumni-card-achievement {
+        font-size: 9px;
+        -webkit-line-clamp: 2;
+    }
+    
+    .alumni-card-badge {
+        font-size: 7px;
+        padding: 2px 8px;
+    }
+    
+    .alumni-nav {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .alumni-nav i {
+        font-size: 10px;
+    }
+    
+    .alumni-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .alumni-dot.active {
+        width: 24px;
+    }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .alumni-track {
+        transition: none !important;
+    }
+    
+    .alumni-card:hover {
+        transform: none !important;
+    }
+    
+    .alumni-card:hover .alumni-card-image img {
+        transform: none !important;
+    }
+    
+    .alumni-card:hover .alumni-card-icon {
+        opacity: 0 !important;
+        transform: none !important;
+    }
+    
+    .alumni-nav:hover {
+        transform: translateY(-50%) !important;
+    }
+    
+    .alumni-btn-primary:hover {
+        transform: none !important;
+    }
+    
+    .alumni-btn-secondary:hover {
+        transform: none !important;
+    }
+}

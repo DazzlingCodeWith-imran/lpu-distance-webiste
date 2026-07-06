@@ -1,242 +1,718 @@
 /* ============================================================
-   ADMISSION BANNER - FIXED VERSION
+   ADMISSION BANNER - PREMIUM
    ============================================================ */
 
 .admission-banner {
     position: relative;
-    padding: 110px 0 90px;
-    /* Background Image + Gradient */
-    background-image: 
-        linear-gradient(135deg, rgba(249, 116, 22, 0.432) 0%, rgba(236, 97, 21, 0.664) 100%),
-        url('https://plus.unsplash.com/premium_photo-1663079426406-1b82fed16a79?q=80&w=915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 560px;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    z-index: 1;
+    background: #0F172A;
 }
 
 /* ============================================================
-   BACKGROUND DECORATIONS
+   BACKGROUND
    ============================================================ */
 
 .admission-banner-bg {
     position: absolute;
     inset: 0;
-    z-index: 2;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-/* Decorative Shapes */
-.admission-shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.09;
-    background: #FFFFFF;
-    pointer-events: none;
+.admission-banner-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomIn 25s ease-in-out infinite alternate;
 }
 
-.admission-shape-1 { width: 340px; height: 340px; top: -100px; right: -90px; animation: floatShape 20s ease-in-out infinite; }
-.admission-shape-2 { width: 240px; height: 240px; bottom: -70px; left: -60px; animation: floatShape 24s ease-in-out infinite reverse; }
-.admission-shape-3 { width: 170px; height: 170px; top: 42%; right: 22%; animation: floatShape 28s ease-in-out infinite 4s; }
-.admission-shape-4 { width: 120px; height: 120px; bottom: 32%; left: 58%; animation: floatShape 22s ease-in-out infinite 1.5s; }
-
-@keyframes floatShape {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.1); }
-    66% { transform: translate(-20px, 25px) scale(0.9); }
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
 }
 
-/* Grid Pattern */
-.admission-grid-pattern {
+.admission-banner-overlay {
     position: absolute;
     inset: 0;
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: 3;
-    pointer-events: none;
+    background: linear-gradient(135deg,
+            rgba(15, 23, 42, 0.92) 0%,
+            rgba(15, 23, 42, 0.75) 40%,
+            rgba(249, 115, 22, 0.15) 100%
+    );
+    z-index: 1;
 }
 
 /* ============================================================
-   CONTAINER & CONTENT
+   DECORATIVE SHAPES
+   ============================================================ */
+
+.admission-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.admission-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(249, 115, 22, 0.05);
+    border: 1px solid rgba(249, 115, 22, 0.08);
+    animation: floatShape 15s ease-in-out infinite;
+}
+
+.admission-shape-1 {
+    width: 350px;
+    height: 350px;
+    top: -120px;
+    right: -80px;
+    animation-delay: 0s;
+}
+
+.admission-shape-2 {
+    width: 250px;
+    height: 250px;
+    bottom: -80px;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.admission-shape-3 {
+    width: 180px;
+    height: 180px;
+    top: 35%;
+    right: 12%;
+    animation-delay: 4s;
+}
+
+.admission-shape-4 {
+    width: 120px;
+    height: 120px;
+    bottom: 25%;
+    left: 3%;
+    animation-delay: 6s;
+}
+
+.admission-shape-5 {
+    width: 80px;
+    height: 80px;
+    top: 15%;
+    left: 20%;
+    animation-delay: 8s;
+}
+
+@keyframes floatShape {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(35px, -25px) scale(1.1); }
+    50% { transform: translate(-25px, 35px) scale(0.9); }
+    75% { transform: translate(20px, -15px) scale(1.05); }
+}
+
+/* ============================================================
+   CONTAINER
    ============================================================ */
 
 .admission-container {
     position: relative;
-    z-index: 5;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 24px;
+    z-index: 2;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
 .admission-content {
-    flex: 1;
-    max-width: 720px;
-    animation: fadeInUp 1.2s ease forwards;
+    max-width: 640px;
+    animation: fadeInUp 1s ease forwards;
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Badge */
 .admission-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(12px);
-    padding: 8px 18px;
+    background: rgba(249, 115, 22, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 6px 16px;
     border-radius: 999px;
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    animation: pulseGlow 4.5s ease-in-out infinite;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    margin-bottom: 20px;
+    animation: pulseGlow 3s ease-in-out infinite;
 }
 
 @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.25); }
-    50% { box-shadow: 0 0 0 16px rgba(255,255,255,0); }
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(249, 115, 22, 0);
+    }
 }
 
+.admission-badge i {
+    font-size: 14px;
+    color: #F97316;
+}
+
+/* Title */
 .admission-title {
-    font-size: clamp(36px, 6vw, 58px);
+    font-size: clamp(36px, 5vw, 56px);
     font-weight: 800;
+    line-height: 1.08;
     color: #FFFFFF;
-    line-height: 1.05;
-    margin-bottom: 20px;
-    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
 }
 
 .admission-title span {
-    background: linear-gradient(135deg, #FFFFFF, #FFEDD5);
+    background: linear-gradient(135deg, #F97316, #EA580C);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
+/* Description */
 .admission-description {
-    font-size: clamp(17px, 1.4vw, 22px);
-    color: rgba(255, 255, 255, 0.93);
-    line-height: 1.65;
-    margin-bottom: 36px;
-    max-width: 580px;
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 32px;
+    max-width: 520px;
 }
 
+/* Quick Stats */
+.admission-quick-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 36px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.admission-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.admission-stat-number {
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 700;
+    color: #F97316;
+    line-height: 1.1;
+}
+
+.admission-stat-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.admission-stat-divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* CTA Buttons */
 .admission-actions {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 36px;
 }
 
-.admission-btn-primary,
-.admission-btn-secondary {
+.admission-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     padding: 16px 36px;
     border-radius: 999px;
     font-size: 16px;
     font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #F97316, #EA580C);
     text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.35);
+    border: none;
+    cursor: pointer;
+}
+
+.admission-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.5);
+}
+
+.admission-btn-primary i:last-child {
+    transition: all 0.3s ease;
+}
+
+.admission-btn-primary:hover i:last-child {
+    transform: translateX(6px);
+}
+
+.admission-btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-}
-
-.admission-btn-primary {
-    background: #FFFFFF;
-    color: #F97316;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-}
-
-.admission-btn-primary:hover { transform: translateY(-4px); }
-
-.admission-btn-secondary {
-    background: rgba(255,255,255,0.15);
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 600;
     color: #FFFFFF;
-    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
+
+.admission-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.admission-btn-secondary i {
+    color: #F97316;
+}
+
+/* ============================================================
+   FLOATING ELEMENTS
+   ============================================================ */
 
 .admission-floating {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 6;
+    gap: 16px;
+    z-index: 3;
 }
 
 .admission-float-card {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 18px 26px;
-    background: rgba(255,255,255,0.12);
+    padding: 14px 22px 14px 18px;
+    background: rgba(255, 255, 255, 0.07);
     backdrop-filter: blur(16px);
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,0.15);
-    animation: floatCard 10s ease-in-out infinite;
-    min-width: 220px;
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    min-width: 200px;
+    color: #FFFFFF;
 }
 
-.admission-float-card:nth-child(2) { animation-delay: 3s; }
+.admission-float-card-1 {
+    animation: floatCard1 8s ease-in-out infinite;
+}
 
-@keyframes floatCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+.admission-float-card-2 {
+    animation: floatCard2 9s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes floatCard1 {
+    0% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% { 
+        transform: translateY(-14px) rotate(0.5deg);
+    }
+    66% { 
+        transform: translateY(8px) rotate(-0.3deg);
+    }
+    100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes floatCard2 {
+    0% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    40% { 
+        transform: translateY(16px) rotate(-0.5deg);
+    }
+    70% { 
+        transform: translateY(-10px) rotate(0.4deg);
+    }
+    100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.admission-float-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(249, 115, 22, 0.3);
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.15);
+    animation-play-state: paused;
+}
+
+.admission-float-card i {
+    font-size: 24px;
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.15);
+    padding: 10px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.admission-float-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+.admission-float-card strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+
+.admission-float-card span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.3;
+}
+
+/* ============================================================
+   SCROLL INDICATOR
+   ============================================================ */
+
+.admission-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.4);
+    animation: scrollBounce 3s ease-in-out infinite;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admission-scroll:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(12px); }
+}
+
+.admission-scroll span {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.admission-scroll i {
+    font-size: 18px;
+    color: #F97316;
 }
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 
-@media (max-width: 991px) {
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
     .admission-container {
+        padding: 60px 40px;
+    }
+    
+    .admission-floating {
+        right: 30px;
+        gap: 12px;
+    }
+    
+    .admission-float-card {
+        min-width: 170px;
+        padding: 12px 18px 12px 14px;
+    }
+    
+    .admission-float-card i {
+        font-size: 20px;
+        padding: 8px;
+    }
+    
+    .admission-float-card strong {
+        font-size: 14px;
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .admission-banner {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+    
+    .admission-container {
+        padding: 0 40px;
+        min-height: auto;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         gap: 40px;
     }
+    
+    .admission-content {
+        max-width: 100%;
+    }
+    
     .admission-floating {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
         flex-direction: row;
         width: 100%;
+        gap: 12px;
         flex-wrap: wrap;
     }
-    .admission-float-card { flex: 1; min-width: 200px; }
+    
+    .admission-float-card {
+        flex: 1;
+        min-width: 160px;
+    }
+    
+    .admission-float-card-1 {
+        animation: floatCard1 8s ease-in-out infinite;
+    }
+    
+    .admission-float-card-2 {
+        animation: floatCard2 9s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    
+    .admission-title {
+        font-size: 38px;
+    }
+    
+    .admission-shape-1,
+    .admission-shape-2 {
+        display: none;
+    }
 }
 
+/* Mobile Large (576px - 767px) */
 @media (max-width: 767px) {
     .admission-banner {
-        padding: 70px 0 50px;
+        padding: 60px 0 40px;
         min-height: auto;
-        background-attachment: scroll;
     }
-    .admission-actions { flex-direction: column; width: 100%; }
-    .admission-btn-primary, .admission-btn-secondary { width: 100%; justify-content: center; }
-    .admission-floating { flex-direction: column; }
+    
+    .admission-container {
+        padding: 0 24px;
+    }
+    
+    .admission-title {
+        font-size: 30px;
+    }
+    
+    .admission-description {
+        font-size: 15px;
+    }
+    
+    .admission-quick-stats {
+        gap: 16px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    
+    .admission-stat-number {
+        font-size: 20px;
+    }
+    
+    .admission-stat-label {
+        font-size: 11px;
+    }
+    
+    .admission-stat-divider {
+        height: 28px;
+    }
+    
+    .admission-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .admission-btn-primary,
+    .admission-btn-secondary {
+        justify-content: center;
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+    
+    .admission-floating {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .admission-float-card {
+        width: 100%;
+        min-width: auto;
+        padding: 12px 18px;
+        animation: floatCardMobile 6s ease-in-out infinite;
+    }
+    
+    .admission-float-card-2 {
+        animation: floatCardMobile2 7s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    
+    @keyframes floatCardMobile {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    
+    @keyframes floatCardMobile2 {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(8px); }
+    }
+    
+    .admission-scroll {
+        display: none;
+    }
+    
+    .admission-shape-3,
+    .admission-shape-4 {
+        display: none;
+    }
 }
 
+/* Mobile Small (320px - 575px) */
 @media (max-width: 575px) {
-    .admission-container { padding: 0 16px; }
-    .admission-title { font-size: 28px; }
+    .admission-banner {
+        padding: 40px 0 30px;
+    }
+    
+    .admission-container {
+        padding: 0 16px;
+    }
+    
+    .admission-title {
+        font-size: 26px;
+    }
+    
+    .admission-description {
+        font-size: 14px;
+    }
+    
+    .admission-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+    
+    .admission-quick-stats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 16px;
+        width: 100%;
+    }
+    
+    .admission-stat-divider {
+        display: none;
+    }
+    
+    .admission-float-card {
+        padding: 10px 14px;
+    }
+    
+    .admission-float-card i {
+        font-size: 16px;
+        padding: 6px;
+    }
+    
+    .admission-float-card strong {
+        font-size: 13px;
+    }
+    
+    .admission-float-card span {
+        font-size: 11px;
+    }
 }
 
-/* Reduced Motion */
+/* ============================================================
+   ACCESSIBILITY - Reduced Motion
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-    .admission-shape, .admission-float-card, .admission-badge {
-        animation: none !important;
+    .admission-banner-bg img,
+    .admission-shape,
+    .admission-float-card,
+    .admission-badge,
+    .admission-scroll {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+    
+    .admission-btn-primary:hover {
+        transform: none !important;
+    }
+    
+    .admission-btn-secondary:hover {
+        transform: none !important;
+    }
+    
+    .admission-float-card:hover {
+        animation-play-state: running !important;
     }
 }

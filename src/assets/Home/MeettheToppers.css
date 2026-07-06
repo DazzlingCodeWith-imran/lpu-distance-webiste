@@ -1,0 +1,1011 @@
+/* ============================================================
+   MEET THE TOPPERS — Complete CSS
+   Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
+   ============================================================ */
+
+/* ============================================================
+   SECTION CONTAINER
+   ============================================================ */
+.toppers-section {
+    padding: 80px 0;
+    background: #F8FAFC;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decorations */
+.toppers-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatBg 20s ease-in-out infinite;
+}
+
+.toppers-section::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: floatBg 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatBg {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(30px, -20px); }
+    66% { transform: translate(-20px, 30px); }
+}
+
+.toppers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+.toppers-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.toppers-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    animation: pulseBadge 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.2);
+    }
+    50% { 
+        transform: scale(1.05); 
+        box-shadow: 0 0 0 10px rgba(249, 115, 22, 0);
+    }
+}
+
+.toppers-badge i {
+    font-size: 14px;
+}
+
+.toppers-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.toppers-title span {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.toppers-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #F97316, #EA580C);
+    border-radius: 999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underlineSlide 3s ease-in-out infinite;
+}
+
+@keyframes underlineSlide {
+    0%, 100% { transform: scaleX(0); transform-origin: left; }
+    50% { transform: scaleX(1); transform-origin: left; }
+    50.1% { transform-origin: right; }
+    100% { transform: scaleX(0); transform-origin: right; }
+}
+
+.toppers-subtitle {
+    font-size: 16px;
+    color: #64748B;
+    max-width: 550px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+}
+
+.toppers-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.toppers-divider span {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #F97316, transparent);
+    border-radius: 999px;
+}
+
+.toppers-divider i {
+    font-size: 18px;
+    color: #F97316;
+    animation: iconSpin 6s linear infinite;
+}
+
+@keyframes iconSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   GRID LAYOUT
+   ============================================================ */
+.toppers-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* ============================================================
+   TOPPER CARDS
+   ============================================================ */
+.topper-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid #F1F5F9;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+    animation: cardFadeIn 0.6s ease forwards;
+}
+
+.topper-card:nth-child(1) { animation-delay: 0.05s; }
+.topper-card:nth-child(2) { animation-delay: 0.10s; }
+.topper-card:nth-child(3) { animation-delay: 0.15s; }
+.topper-card:nth-child(4) { animation-delay: 0.20s; }
+.topper-card:nth-child(5) { animation-delay: 0.25s; }
+.topper-card:nth-child(6) { animation-delay: 0.30s; }
+.topper-card:nth-child(7) { animation-delay: 0.35s; }
+.topper-card:nth-child(8) { animation-delay: 0.40s; }
+.topper-card:nth-child(9) { animation-delay: 0.45s; }
+.topper-card:nth-child(10) { animation-delay: 0.50s; }
+.topper-card:nth-child(11) { animation-delay: 0.55s; }
+.topper-card:nth-child(12) { animation-delay: 0.60s; }
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Glowing border effect */
+.topper-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 16px;
+    padding: 2px;
+    background: linear-gradient(135deg, #F97316, #EA580C, #F59E0B, #F97316);
+    background-size: 300% 300%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: borderGlow 4s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.topper-card:hover::before {
+    opacity: 1;
+}
+
+/* Card hover */
+.topper-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 24px 60px rgba(249, 115, 22, 0.15);
+    border-color: transparent;
+}
+
+/* ============================================================
+   CARD IMAGE
+   ============================================================ */
+.topper-card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F1F5F9, #E2E8F0);
+}
+
+.topper-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.topper-card:hover .topper-card-image img {
+    transform: scale(1.12) rotate(-2deg);
+}
+
+/* Image overlay on hover */
+.topper-card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(249, 115, 22, 0.1));
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.topper-card:hover .topper-card-image::after {
+    opacity: 1;
+}
+
+/* ============================================================
+   RANK BADGE
+   ============================================================ */
+.topper-card-rank {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(249, 115, 22, 0.9);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 2;
+}
+
+.topper-card:hover .topper-card-rank {
+    transform: scale(1.25) rotate(360deg);
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+}
+
+/* ============================================================
+   CARD BODY
+   ============================================================ */
+.topper-card-body {
+    padding: 14px 16px 16px;
+    text-align: center;
+}
+
+.topper-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.topper-card:hover .topper-card-name {
+    color: #F97316;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   CGPA
+   ============================================================ */
+.topper-card-cgpa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #F97316;
+    margin-bottom: 2px;
+}
+
+.topper-card-cgpa i {
+    font-size: 12px;
+    color: #F59E0B;
+    animation: starPulse 2s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+    }
+    25% { transform: scale(1.3) rotate(10deg); }
+    75% { transform: scale(0.9) rotate(-10deg); }
+}
+
+.topper-card:hover .topper-card-cgpa i {
+    animation: starPulse 1s ease-in-out infinite;
+}
+
+/* ============================================================
+   PROGRAM
+   ============================================================ */
+.topper-card-program {
+    font-size: 11px;
+    color: #94A3B8;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.topper-card:hover .topper-card-program {
+    color: #64748B;
+}
+
+/* ============================================================
+   MEDAL BADGE
+   ============================================================ */
+.topper-card-badge {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-top: 6px;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.topper-card:hover .topper-card-badge {
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.2);
+}
+
+/* Medal colors */
+.topper-card-badge.gold,
+.topper-card:nth-child(1) .topper-card-badge,
+.topper-card:nth-child(2) .topper-card-badge,
+.topper-card:nth-child(3) .topper-card-badge,
+.topper-card:nth-child(10) .topper-card-badge,
+.topper-card:nth-child(11) .topper-card-badge,
+.topper-card:nth-child(12) .topper-card-badge {
+    background: rgba(251, 191, 36, 0.15);
+    color: #D97706;
+}
+
+.topper-card-badge.silver,
+.topper-card:nth-child(4) .topper-card-badge,
+.topper-card:nth-child(5) .topper-card-badge,
+.topper-card:nth-child(6) .topper-card-badge,
+.topper-card:nth-child(7) .topper-card-badge,
+.topper-card:nth-child(8) .topper-card-badge {
+    background: rgba(148, 163, 184, 0.15);
+    color: #64748B;
+}
+
+.topper-card-badge.bronze,
+.topper-card:nth-child(9) .topper-card-badge {
+    background: rgba(180, 83, 9, 0.15);
+    color: #B45309;
+}
+
+/* ============================================================
+   FOOTER / CTA
+   ============================================================ */
+.toppers-footer {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.toppers-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+}
+
+/* Shine effect */
+.toppers-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: rotate(45deg) translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toppers-btn-primary:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+.toppers-btn-primary:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(249, 115, 22, 0.45);
+}
+
+.toppers-btn-primary i:last-child {
+    transition: all 0.3s ease;
+}
+
+.toppers-btn-primary:hover i:last-child {
+    transform: translateX(6px);
+}
+
+.toppers-btn-primary:active {
+    transform: scale(0.95);
+}
+
+.toppers-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E293B;
+    background: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid #F1F5F9;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ripple effect */
+.toppers-btn-secondary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(234, 88, 12, 0.05));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.toppers-btn-secondary:hover::after {
+    opacity: 1;
+}
+
+.toppers-btn-secondary:hover {
+    border-color: #F97316;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.08);
+}
+
+.toppers-btn-secondary i {
+    color: #F97316;
+    transition: all 0.3s ease;
+}
+
+.toppers-btn-secondary:hover i {
+    transform: translateX(-4px) rotate(-10deg);
+}
+
+.toppers-btn-secondary:active {
+    transform: scale(0.95);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+    .toppers-container {
+        max-width: 1320px;
+        padding: 0 40px;
+    }
+    
+    .toppers-grid {
+        gap: 24px;
+    }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .toppers-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+    }
+}
+
+/* Laptop (992px - 1199px) */
+@media (max-width: 1199px) {
+    .toppers-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+    
+    .toppers-section {
+        padding: 60px 0;
+    }
+}
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+    .toppers-section {
+        padding: 60px 0;
+    }
+    
+    .toppers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    
+    .toppers-header {
+        margin-bottom: 36px;
+    }
+    
+    .toppers-title {
+        font-size: 32px;
+    }
+    
+    .toppers-subtitle {
+        font-size: 15px;
+    }
+    
+    .topper-card-body {
+        padding: 12px 12px 14px;
+    }
+    
+    .topper-card-name {
+        font-size: 12px;
+    }
+    
+    .topper-card-cgpa {
+        font-size: 12px;
+    }
+    
+    .topper-card-program {
+        font-size: 10px;
+    }
+    
+    .topper-card-rank {
+        width: 26px;
+        height: 26px;
+        font-size: 10px;
+        top: 8px;
+        right: 8px;
+    }
+}
+
+/* Mobile Landscape (576px - 767px) */
+@media (max-width: 767px) {
+    .toppers-section {
+        padding: 48px 0;
+    }
+    
+    .toppers-container {
+        padding: 0 20px;
+    }
+    
+    .toppers-header {
+        margin-bottom: 32px;
+    }
+    
+    .toppers-title {
+        font-size: 28px;
+    }
+    
+    .toppers-subtitle {
+        font-size: 14px;
+    }
+    
+    .toppers-badge {
+        font-size: 11px;
+        padding: 4px 14px;
+    }
+    
+    .toppers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+    
+    .topper-card {
+        border-radius: 12px;
+    }
+    
+    .topper-card::before {
+        border-radius: 12px;
+    }
+    
+    .topper-card-rank {
+        width: 24px;
+        height: 24px;
+        font-size: 9px;
+        top: 6px;
+        right: 6px;
+    }
+    
+    .topper-card-body {
+        padding: 10px 10px 12px;
+    }
+    
+    .topper-card-name {
+        font-size: 11px;
+    }
+    
+    .topper-card-cgpa {
+        font-size: 11px;
+    }
+    
+    .topper-card-cgpa i {
+        font-size: 10px;
+    }
+    
+    .topper-card-program {
+        font-size: 9px;
+    }
+    
+    .topper-card-badge {
+        font-size: 7px;
+        padding: 1px 8px;
+        margin-top: 4px;
+    }
+    
+    .toppers-footer {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 32px;
+    }
+    
+    .toppers-btn-primary,
+    .toppers-btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Portrait (320px - 575px) */
+@media (max-width: 575px) {
+    .toppers-section {
+        padding: 40px 0;
+    }
+    
+    .toppers-container {
+        padding: 0 16px;
+    }
+    
+    .toppers-header {
+        margin-bottom: 28px;
+    }
+    
+    .toppers-title {
+        font-size: 24px;
+    }
+    
+    .toppers-subtitle {
+        font-size: 13px;
+    }
+    
+    .toppers-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+    
+    .toppers-badge i {
+        font-size: 12px;
+    }
+    
+    .toppers-divider {
+        max-width: 150px;
+    }
+    
+    .toppers-divider i {
+        font-size: 14px;
+    }
+    
+    .toppers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .topper-card {
+        border-radius: 12px;
+    }
+    
+    .topper-card::before {
+        border-radius: 12px;
+    }
+    
+    .topper-card-rank {
+        width: 22px;
+        height: 22px;
+        font-size: 8px;
+        top: 5px;
+        right: 5px;
+    }
+    
+    .topper-card-body {
+        padding: 8px 8px 10px;
+    }
+    
+    .topper-card-name {
+        font-size: 10px;
+    }
+    
+    .topper-card-cgpa {
+        font-size: 10px;
+    }
+    
+    .topper-card-cgpa i {
+        font-size: 9px;
+    }
+    
+    .topper-card-program {
+        font-size: 8px;
+    }
+    
+    .topper-card-badge {
+        font-size: 6px;
+        padding: 1px 6px;
+        margin-top: 3px;
+    }
+    
+    .toppers-footer {
+        margin-top: 28px;
+    }
+    
+    .toppers-btn-primary,
+    .toppers-btn-secondary {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+/* Very Small Mobile (320px and below) */
+@media (max-width: 360px) {
+    .toppers-container {
+        padding: 0 12px;
+    }
+    
+    .toppers-title {
+        font-size: 20px;
+    }
+    
+    .toppers-subtitle {
+        font-size: 12px;
+    }
+    
+    .toppers-grid {
+        gap: 10px;
+    }
+    
+    .topper-card-rank {
+        width: 18px;
+        height: 18px;
+        font-size: 7px;
+    }
+    
+    .topper-card-name {
+        font-size: 9px;
+    }
+    
+    .topper-card-cgpa {
+        font-size: 9px;
+    }
+    
+    .topper-card-program {
+        font-size: 7px;
+    }
+    
+    .topper-card-badge {
+        font-size: 5px;
+        padding: 1px 4px;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .topper-card {
+        opacity: 1 !important;
+        animation: none !important;
+    }
+    
+    .topper-card:hover {
+        transform: none !important;
+    }
+    
+    .topper-card:hover .topper-card-image img {
+        transform: none !important;
+    }
+    
+    .topper-card:hover .topper-card-rank {
+        transform: none !important;
+    }
+    
+    .topper-card:hover .topper-card-badge {
+        transform: none !important;
+    }
+    
+    .topper-card:hover .topper-card-name {
+        transform: none !important;
+    }
+    
+    .toppers-btn-primary:hover {
+        transform: none !important;
+    }
+    
+    .toppers-btn-secondary:hover {
+        transform: none !important;
+    }
+    
+    .toppers-btn-primary::before {
+        display: none !important;
+    }
+    
+    .toppers-title span::after {
+        animation: none !important;
+    }
+    
+    .toppers-badge {
+        animation: none !important;
+    }
+    
+    .toppers-divider i {
+        animation: none !important;
+    }
+    
+    .topper-card-cgpa i {
+        animation: none !important;
+    }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .toppers-section {
+        background: #FFFFFF !important;
+        padding: 40px 0 !important;
+    }
+    
+    .topper-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    
+    .topper-card:hover {
+        transform: none !important;
+    }
+    
+    .toppers-btn-primary,
+    .toppers-btn-secondary {
+        display: none !important;
+    }
+    
+    .toppers-badge {
+        animation: none !important;
+        background: #f0f0f0 !important;
+    }
+    
+    .toppers-divider i {
+        animation: none !important;
+    }
+}
+
+/* ============================================================
+   FOCUS STYLES
+   ============================================================ */
+.toppers-btn-primary:focus-visible,
+.toppers-btn-secondary:focus-visible {
+    outline: 3px solid #F97316;
+    outline-offset: 3px;
+}
+
+.topper-card:focus-visible {
+    outline: 3px solid #F97316;
+    outline-offset: 2px;
+}
+
+/* ============================================================
+   SELECTION STYLES
+   ============================================================ */
+.toppers-section ::selection {
+    background: #F97316;
+    color: #FFFFFF;
+}
+
+.toppers-section ::-moz-selection {
+    background: #F97316;
+    color: #FFFFFF;
+}
+
+/* ============================================================
+   SCROLLBAR STYLING
+   ============================================================ */
+.toppers-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.toppers-container::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 999px;
+}
+
+.toppers-container::-webkit-scrollbar-thumb {
+    background: #F97316;
+    border-radius: 999px;
+}
+
+.toppers-container::-webkit-scrollbar-thumb:hover {
+    background: #EA580C;
+}
