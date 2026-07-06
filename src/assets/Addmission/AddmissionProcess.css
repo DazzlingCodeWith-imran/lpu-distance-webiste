@@ -1,0 +1,635 @@
+/* ============================================================
+   ADMISSION PROCESS SECTION
+   ============================================================ */
+
+.process-section {
+    padding: 80px 0;
+    background: #F8FAFC;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decoration */
+.process-section::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.process-section::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.process-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.process-header {
+    text-align: center;
+    margin-bottom: 52px;
+}
+
+.process-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.process-badge i {
+    font-size: 14px;
+}
+
+.process-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.process-title span {
+    color: #F97316;
+}
+
+.process-subtitle {
+    font-size: 16px;
+    color: #64748B;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+
+.process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+/* Vertical line */
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 48px;
+    bottom: 48px;
+    width: 2px;
+    background: linear-gradient(180deg, #F97316 0%, rgba(249, 115, 22, 0.2) 100%);
+    border-radius: 999px;
+}
+
+/* ============================================================
+   PROCESS STEP
+   ============================================================ */
+
+.process-step {
+    display: flex;
+    gap: 28px;
+    padding: 24px 0;
+    position: relative;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.process-step:nth-child(1) { animation-delay: 0.1s; }
+.process-step:nth-child(2) { animation-delay: 0.2s; }
+.process-step:nth-child(3) { animation-delay: 0.3s; }
+.process-step:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Step Number */
+.process-step-number {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.process-step-number span {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.process-step:hover .process-step-number span {
+    transform: scale(1.08);
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.4);
+}
+
+.process-step-line {
+    flex: 1;
+    width: 2px;
+    background: linear-gradient(180deg, #F97316, rgba(249, 115, 22, 0.15));
+    margin: 8px 0;
+}
+
+.process-step:last-child .process-step-line {
+    display: none;
+}
+
+/* Step Content */
+.process-step-content {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    background: #FFFFFF;
+    padding: 20px 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #F1F5F9;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: flex-start;
+}
+
+.process-step:hover .process-step-content {
+    border-color: rgba(249, 115, 22, 0.2);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.08);
+    transform: translateX(4px);
+}
+
+.process-step-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(249, 115, 22, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.process-step:hover .process-step-icon {
+    background: rgba(249, 115, 22, 0.15);
+    transform: scale(1.05);
+}
+
+.process-step-icon i {
+    font-size: 22px;
+    color: #F97316;
+}
+
+.process-step-info {
+    flex: 1;
+}
+
+.process-step-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 4px;
+}
+
+.process-step-desc {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.process-step-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.process-step-meta span {
+    font-size: 12px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.process-step-meta span i {
+    font-size: 12px;
+    color: #22C55E;
+}
+
+.process-step-meta span i.fa-clock {
+    color: #F97316;
+}
+
+.process-step-meta span i.fa-file-pdf {
+    color: #EF4444;
+}
+
+.process-step-meta span i.fa-credit-card {
+    color: #8B5CF6;
+}
+
+.process-step-meta span i.fa-envelope {
+    color: #3B82F6;
+}
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+
+.process-cta-banner {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    border-radius: 20px;
+    padding: 32px 40px;
+    box-shadow: 0 12px 40px rgba(249, 115, 22, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-cta-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.process-cta-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -5%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.process-cta-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.process-cta-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.process-cta-icon i {
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+.process-cta-text {
+    flex: 1;
+}
+
+.process-cta-text h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 2px;
+}
+
+.process-cta-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.process-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #F97316;
+    background: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.process-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    background: #F8FAFC;
+}
+
+.process-cta-btn i {
+    transition: all 0.3s ease;
+}
+
+.process-cta-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .process-section {
+        padding: 60px 0;
+    }
+    
+    .process-header {
+        margin-bottom: 40px;
+    }
+    
+    .process-timeline::before {
+        left: 28px;
+    }
+    
+    .process-step-number span {
+        width: 56px;
+        height: 56px;
+        font-size: 18px;
+    }
+    
+    .process-step-content {
+        padding: 16px 20px;
+    }
+    
+    .process-cta-banner {
+        padding: 28px 32px;
+    }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) {
+    .process-section {
+        padding: 48px 0;
+    }
+    
+    .process-title {
+        font-size: 28px;
+    }
+    
+    .process-subtitle {
+        font-size: 14px;
+    }
+    
+    .process-timeline::before {
+        left: 24px;
+    }
+    
+    .process-step {
+        gap: 16px;
+        padding: 16px 0;
+    }
+    
+    .process-step-number span {
+        width: 48px;
+        height: 48px;
+        font-size: 16px;
+    }
+    
+    .process-step-content {
+        padding: 14px 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .process-step-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .process-step-icon i {
+        font-size: 18px;
+    }
+    
+    .process-step-title {
+        font-size: 16px;
+    }
+    
+    .process-step-desc {
+        font-size: 13px;
+    }
+    
+    .process-step-meta {
+        gap: 12px;
+    }
+    
+    .process-cta-banner {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+    
+    .process-cta-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    
+    .process-cta-text h4 {
+        font-size: 18px;
+    }
+    
+    .process-cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+}
+
+/* Mobile Small (320px - 575px) */
+@media (max-width: 575px) {
+    .process-section {
+        padding: 40px 0;
+    }
+    
+    .process-container {
+        padding: 0 16px;
+    }
+    
+    .process-header {
+        margin-bottom: 32px;
+    }
+    
+    .process-title {
+        font-size: 24px;
+    }
+    
+    .process-subtitle {
+        font-size: 13px;
+    }
+    
+    .process-timeline::before {
+        left: 20px;
+        top: 40px;
+        bottom: 40px;
+    }
+    
+    .process-step {
+        gap: 14px;
+        padding: 12px 0;
+    }
+    
+    .process-step-number span {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .process-step-content {
+        padding: 12px 14px;
+        border-radius: 12px;
+        gap: 10px;
+    }
+    
+    .process-step-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .process-step-icon i {
+        font-size: 16px;
+    }
+    
+    .process-step-title {
+        font-size: 15px;
+    }
+    
+    .process-step-desc {
+        font-size: 12px;
+    }
+    
+    .process-step-meta {
+        gap: 8px;
+        flex-direction: column;
+    }
+    
+    .process-step-meta span {
+        font-size: 11px;
+    }
+    
+    .process-cta-banner {
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+    
+    .process-cta-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .process-cta-icon i {
+        font-size: 22px;
+    }
+    
+    .process-cta-text h4 {
+        font-size: 16px;
+    }
+    
+    .process-cta-text p {
+        font-size: 13px;
+    }
+    
+    .process-cta-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY - Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .process-step,
+    .process-step-number span,
+    .process-step-content,
+    .process-step-icon,
+    .process-cta-btn,
+    .process-cta-btn i {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+    
+    .process-step:hover .process-step-number span {
+        transform: none !important;
+    }
+    
+    .process-step:hover .process-step-content {
+        transform: none !important;
+    }
+    
+    .process-step:hover .process-step-icon {
+        transform: none !important;
+    }
+    
+    .process-cta-btn:hover {
+        transform: none !important;
+    }
+    
+    .process-cta-btn:hover i {
+        transform: none !important;
+    }
+}

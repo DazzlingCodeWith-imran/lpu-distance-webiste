@@ -1,0 +1,58 @@
+/* Key Highlights Section */
+.key-highlights-section {
+    padding: 100px 0;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+}
+
+.highlight-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border);
+}
+
+.highlight-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary);
+}
+
+.highlight-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(249, 115, 22, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #f97316;
+}
+
+.highlight-card:hover .highlight-icon {
+    background: #FFF7ED;             /* Light orange background */
+    transform: scale(1.1);
+    /* Color orange hi rahega */
+}
+
+.highlight-card h3 {
+    font-size: 2.45rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.highlight-card p {
+    color: var(--text-light);
+    font-weight: 500;
+    margin: 0;
+    font-size: 1.05rem;
+}

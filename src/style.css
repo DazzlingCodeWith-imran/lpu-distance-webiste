@@ -1,0 +1,426 @@
+/* Primary Orange: #F97316
+Dark Orange: #EA580C
+White: #FFFFFF
+Light Gray: #F8FAFC
+Section Gray: #F1F5F9
+Dark Text: #1E293B
+Gray Text: #64748B */
+
+:root {
+  --primary-orange: #F97316;
+  --dark-orange: #EA580C;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+  --section-gray: #F1F5F9;
+  --dark-text: #1E293B;
+  --gray-text: #64748B;
+  --font-primary: 'Inter', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--dark-text);
+  background-color: var(--white);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--primary-orange);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--light-gray);
+  border-top-color: var(--primary-orange);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--dark-text);
+}
+p {
+  color: var(--gray-text);
+  line-height: 1.6;
+}
+
+/* Premium Buttons */
+.btn-premium {
+  background-color: var(--primary-orange);
+  color: var(--white);
+  padding: 12px 28px; /* thodi horizontal padding badha di */
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap; /* text ko ek hi line me rakhega */
+  min-width: 180px;    /* button ki minimum width */
+  text-align: center;
+}
+.btn-premium:hover {
+  background-color: var(--dark-orange);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-outline-premium {
+  background-color: transparent;
+  color: var(--primary-orange);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid var(--primary-orange);
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-outline-premium:hover {
+  background-color: var(--primary-orange);
+  color: var(--white);
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  padding: 15px 0;
+}
+.navbar.sticky-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1030;
+}
+.navbar-brand {
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--dark-text);
+}
+.navbar-brand span {
+  color: var(--primary-orange);
+}
+.nav-link {
+  font-weight: 500;
+  color: var(--dark-text);
+  margin: 0 10px;
+  transition: var(--transition);
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-orange);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 120px 0 80px;
+  background-color: var(--section-gray);
+  overflow: hidden;
+}
+.hero-content {
+  z-index: 2;
+  position: relative;
+}
+.hero-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card-premium {
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--light-gray);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+  height: 100%;
+}
+.card-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Sections */
+.section-padding {
+  padding: 80px 0;
+}
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+.bg-section-gray {
+  background-color: var(--section-gray);
+}
+.section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.section-subtitle {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-text);
+  color: var(--light-gray);
+  padding: 60px 0 20px;
+}
+.footer h5 {
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.footer a {
+  color: var(--gray-text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer a:hover {
+  color: var(--primary-orange);
+}
+
+/* Floating WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+/* Page Banner (inner pages) */
+.page-banner {
+  padding: 160px 0 70px;
+  background: linear-gradient(135deg, var(--section-gray), var(--light-gray));
+  position: relative;
+}
+.page-banner-title {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.page-banner-subtitle {
+  color: var(--gray-text);
+  font-size: 17px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--primary-orange);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--dark-orange), var(--primary-orange));
+}
+
+/* Badges */
+.badge-premium {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: var(--primary-orange);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* Course / University / Blog Cards */
+.entity-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.entity-card .entity-body {
+  padding: 24px;
+}
+.entity-meta {
+  color: var(--gray-text);
+  font-size: 14px;
+}
+
+/* Timeline (Admissions Process) */
+.process-step {
+  text-align: center;
+  position: relative;
+}
+.process-step .step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-orange);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  margin: 0 auto 16px;
+}
+
+/* Filter Tabs */
+.filter-tabs .btn {
+  border-radius: 30px;
+  margin: 0 6px 12px;
+  border: 2px solid var(--light-gray);
+  background: var(--white);
+  color: var(--dark-text);
+  font-weight: 600;
+  padding: 8px 20px;
+}
+.filter-tabs .btn.active,
+.filter-tabs .btn:hover {
+  background: var(--primary-orange);
+  border-color: var(--primary-orange);
+  color: var(--white);
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  height: 100%;
+}
+.testimonial-card img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Contact info card */
+.contact-info-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  height: 100%;
+}
+.contact-info-card i {
+  font-size: 26px;
+  color: var(--primary-orange);
+  margin-bottom: 14px;
+}
+
+/* Success message */
+.success-message {
+  display: none;
+  margin-top: 16px;
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-orange);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  border: none;
+  cursor: pointer;
+}
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
+}
+.back-to-top:hover {
+  background-color: var(--dark-orange);
+  color: white;
+  transform: translateY(-3px);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--section-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-orange);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-orange);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-orange) var(--section-gray);
+}

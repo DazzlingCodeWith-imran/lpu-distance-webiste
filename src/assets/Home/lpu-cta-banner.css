@@ -1,0 +1,102 @@
+:root{
+  --primary-orange: #F97316;
+  --dark-orange: #EA580C;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+  --section-gray: #F1F5F9;
+  --dark-text: #1E293B;
+  --gray-text: #64748B;
+  --font-primary: 'Inter', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+  --transition: all 0.3s ease;
+}
+
+
+
+.lpu-cta{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
+  padding:64px 24px;
+  text-align:center;
+  isolation:isolate;
+}
+
+/* subtle premium glow, restrained, not a template default */
+.lpu-cta-glow{
+  position:absolute;
+  top:50%; left:50%;
+  width:640px; height:640px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0) 65%);
+  z-index:0;
+  pointer-events:none;
+}
+
+.lpu-cta-container{
+  position:relative;
+  z-index:1;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.lpu-cta-title{
+  font-family:var(--font-primary);
+  font-weight:800;
+  font-size:clamp(1.5rem, 2.6vw, 2rem);
+  line-height:1.25;
+  color:var(--white);
+  letter-spacing:-0.01em;
+  margin:0 0 14px;
+}
+
+.lpu-cta-text{
+  font-size:16px;
+  line-height:1.7;
+  color:rgba(255,255,255,0.9);
+  max-width:560px;
+  margin:0 auto 30px;
+}
+
+.lpu-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:var(--font-primary);
+  font-weight:700;
+  font-size:15px;
+  white-space:nowrap;
+  color:var(--dark-text);
+  background:var(--white);
+  border:none;
+  height:52px;
+  padding:0 34px;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 10px 24px -6px rgba(0,0,0,0.25);
+  transition:var(--transition);
+}
+.lpu-cta-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px -6px rgba(0,0,0,0.3);
+}
+.lpu-cta-btn:active{
+  transform:translateY(0);
+}
+.lpu-cta-btn:focus-visible{
+  outline:2px solid var(--white);
+  outline-offset:3px;
+}
+
+.lpu-cta-btn-icon{
+  font-size:16px;
+  line-height:1;
+}
+
+@media (max-width:480px){
+  .lpu-cta{ padding:48px 20px; }
+  .lpu-cta-btn{ width:100%; }
+}

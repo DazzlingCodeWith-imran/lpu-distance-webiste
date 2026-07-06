@@ -1,0 +1,411 @@
+/* ============================================================
+   PLACEMENT HIGHLIGHTS
+   ============================================================ */
+
+.placement-highlights {
+    padding: 80px 0;
+    background: #F8FAFC;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background decoration */
+.placement-highlights::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.placement-highlights::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.highlights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.highlights-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.highlights-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #F97316;
+    background: rgba(249, 115, 22, 0.1);
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.highlights-badge i {
+    font-size: 14px;
+}
+
+.highlights-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #1E293B;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.highlights-title span {
+    color: #F97316;
+}
+
+.highlights-subtitle {
+    font-size: 16px;
+    color: #64748B;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.highlight-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px 20px 28px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 2px solid #F1F5F9;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #F97316, #EA580C);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+.highlight-card:hover::before {
+    opacity: 1;
+}
+
+.highlight-card:hover .highlight-icon {
+    transform: scale(1.1) rotate(-5deg);
+    background: rgba(249, 115, 22, 0.15);
+}
+
+.highlight-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: rgba(249, 115, 22, 0.08);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.highlight-icon i {
+    font-size: 28px;
+    color: #F97316;
+}
+
+.highlight-number {
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 800;
+    color: #F97316;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.highlight-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748B;
+    margin-bottom: 10px;
+}
+
+.highlight-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #22C55E;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 3px 12px;
+    border-radius: 999px;
+}
+
+.highlight-trend i {
+    font-size: 10px;
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+
+.highlights-stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 24px 32px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #F1F5F9;
+    flex-wrap: wrap;
+}
+
+.stats-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats-bar-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.2;
+}
+
+.stats-bar-label {
+    font-size: 12px;
+    color: #94A3B8;
+    font-weight: 500;
+}
+
+.stats-bar-divider {
+    width: 1px;
+    height: 40px;
+    background: #E2E8F0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .highlights-stats-bar {
+        gap: 20px;
+        padding: 20px 24px;
+    }
+    
+    .stats-bar-divider {
+        height: 30px;
+    }
+}
+
+/* Mobile Large (576px - 767px) */
+@media (max-width: 767px) {
+    .placement-highlights {
+        padding: 60px 0;
+    }
+    
+    .highlights-header {
+        margin-bottom: 32px;
+    }
+    
+    .highlights-title {
+        font-size: 28px;
+    }
+    
+    .highlights-subtitle {
+        font-size: 14px;
+    }
+    
+    .highlight-card {
+        padding: 24px 16px 20px;
+    }
+    
+    .highlight-icon {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .highlight-icon i {
+        font-size: 24px;
+    }
+    
+    .highlight-number {
+        font-size: 28px;
+    }
+    
+    .highlights-stats-bar {
+        gap: 16px;
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .stats-bar-number {
+        font-size: 18px;
+    }
+    
+    .stats-bar-label {
+        font-size: 11px;
+    }
+    
+    .stats-bar-divider {
+        display: none;
+    }
+}
+
+/* Mobile Small (320px - 575px) */
+@media (max-width: 575px) {
+    .placement-highlights {
+        padding: 48px 0;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    
+    .highlight-card {
+        padding: 20px 12px 16px;
+        border-radius: 12px;
+    }
+    
+    .highlight-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 12px;
+    }
+    
+    .highlight-icon i {
+        font-size: 20px;
+    }
+    
+    .highlight-number {
+        font-size: 22px;
+    }
+    
+    .highlight-label {
+        font-size: 12px;
+    }
+    
+    .highlight-trend {
+        font-size: 10px;
+        padding: 2px 10px;
+    }
+    
+    .highlights-stats-bar {
+        padding: 14px 16px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+    
+    .stats-bar-number {
+        font-size: 16px;
+    }
+    
+    .stats-bar-label {
+        font-size: 10px;
+    }
+}
+
+/* Very Small Mobile (320px and below) */
+@media (max-width: 360px) {
+    .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .highlight-card {
+        padding: 16px 8px 14px;
+    }
+    
+    .highlight-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+    }
+    
+    .highlight-icon i {
+        font-size: 18px;
+    }
+    
+    .highlight-number {
+        font-size: 20px;
+    }
+    
+    .highlight-label {
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   ACCESSIBILITY - Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .highlight-card,
+    .highlight-card::before,
+    .highlight-icon {
+        transition-duration: 0.01ms !important;
+    }
+    
+    .highlight-card:hover {
+        transform: none !important;
+    }
+}

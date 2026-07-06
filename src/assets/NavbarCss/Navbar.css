@@ -1,0 +1,11 @@
+/* Default: dono logos visible (desktop) */
+.logo-naac {
+    display: inline-block;
+}
+
+/* Tablet aur mobile view me NAAC logo hide */
+@media (max-width: 991.98px) {
+    .logo-naac {
+        display: none !important;
+    }
+}

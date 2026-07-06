@@ -1,0 +1,555 @@
+/* ============================================
+   LPU Programs Section — Premium Orange Theme
+   ============================================ */
+
+.lpu-prog {
+  --primary-orange: #F97316;
+  --dark-orange: #EA580C;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+  --section-gray: #F1F5F9;
+  --dark-text: #1E293B;
+  --gray-text: #64748B;
+  --font-primary: 'Inter', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+  --transition: all 0.3s ease;
+
+  font-family: var(--font-primary);
+  background: linear-gradient(180deg, var(--white) 0%, var(--section-gray) 100%);
+  padding: 80px 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.lpu-prog * { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+.lpu-prog-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+
+/* ---------- Heading ---------- */
+.lpu-prog-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+}
+
+.lpu-prog-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--dark-text);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  position: relative;
+  display: inline-block;
+}
+
+.lpu-prog-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary-orange), var(--dark-orange));
+}
+
+.lpu-prog-subtitle {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--gray-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Filter Tabs ---------- */
+.lpu-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.lpu-filter-row {
+  display: inline-flex;
+  gap: 6px;
+  background: var(--white);
+  padding: 6px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md), inset 0 0 0 1px rgba(15, 23, 42, 0.05);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.lpu-filter-row::-webkit-scrollbar {
+  display: none;
+}
+
+.lpu-filter-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: var(--font-primary);
+  font-size: clamp(13px, 1vw, 14.5px);
+  font-weight: 600;
+  color: var(--gray-text);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.lpu-filter-btn span {
+  font-size: clamp(10px, 0.8vw, 11px);
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+.lpu-filter-btn:hover {
+  color: var(--dark-orange);
+}
+
+.lpu-filter-btn.active {
+  background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+}
+
+.lpu-filter-btn.active span {
+  color: var(--white);
+  opacity: 0.85;
+}
+
+/* ---------- Grid ---------- */
+.lpu-prog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* ---------- Card ---------- */
+.lpu-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transform: scale(1);
+  height: 100%;
+  min-height: 380px;
+}
+
+.lpu-card.lpu-hide {
+    display: none !important;
+}
+
+.lpu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), 0 20px 30px -10px rgba(234, 88, 12, 0.15);
+  border-color: rgba(249, 115, 22, 0.25);
+}
+
+.lpu-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--light-gray);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.lpu-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.lpu-card:hover .lpu-card-img img {
+  transform: scale(1.08);
+}
+
+.lpu-card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(30,41,59,0.35) 100%);
+}
+
+/* Fallback (no image) state */
+.lpu-card-img.lpu-img-fallback,
+.lpu-card-img.lpu-img-fallback::after {
+  background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
+  content: none;
+}
+
+.lpu-fallback-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+  color: var(--primary-orange);
+  opacity: 0.75;
+}
+
+/* ---------- Card Body ---------- */
+.lpu-card-body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lpu-card-toprow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.lpu-card-toprow h3 {
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.lpu-badge {
+  flex-shrink: 0;
+  background: #FFF1E6;
+  color: var(--dark-orange);
+  font-size: clamp(10px, 0.8vw, 11.5px);
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.lpu-card-sub {
+  font-size: clamp(13px, 1vw, 14px);
+  color: var(--gray-text);
+  margin: 0 0 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.lpu-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(12px, 0.9vw, 13.5px);
+  color: var(--gray-text);
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(100, 116, 139, 0.25);
+  flex-wrap: wrap;
+}
+
+/* ---------- Apply Button ---------- */
+.lpu-apply-btn {
+  margin-top: auto;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-family: var(--font-primary);
+  font-size: clamp(13px, 1vw, 14.5px);
+  font-weight: 700;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.lpu-apply-btn::after {
+  content: "→";
+  margin-left: 8px;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.lpu-apply-btn:hover {
+  box-shadow: 0 10px 20px -6px rgba(234, 88, 12, 0.5);
+  transform: translateY(-2px);
+}
+
+.lpu-apply-btn:hover::after {
+  transform: translateX(4px);
+}
+
+.lpu-apply-btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- Empty state ---------- */
+.lpu-empty-msg {
+  display: none;
+  text-align: center;
+  color: var(--gray-text);
+  font-size: 15px;
+  font-style: italic;
+  padding: 60px 20px;
+  grid-column: 1 / -1;
+}
+
+.lpu-empty-msg.lpu-show {
+  display: block;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Large Screens (1200px+) */
+@media (min-width: 1200px) {
+  .lpu-prog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .lpu-prog-container {
+    padding: 0 30px;
+  }
+}
+
+/* Medium Screens (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .lpu-prog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Small Laptops / Tablets (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .lpu-prog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  
+  .lpu-prog {
+    padding: 60px 16px;
+  }
+  
+  .lpu-filter-btn {
+    padding: 10px 18px;
+  }
+}
+
+/* Tablets (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .lpu-prog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .lpu-prog {
+    padding: 50px 14px;
+  }
+  
+  .lpu-filter-row {
+    padding: 4px;
+    gap: 4px;
+  }
+  
+  .lpu-filter-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+  
+  .lpu-card {
+    min-height: 340px;
+  }
+}
+
+/* Mobile (320px - 575px) */
+@media (max-width: 575px) {
+  .lpu-prog {
+    padding: 40px 10px;
+  }
+  
+  .lpu-prog-container {
+    padding: 0 10px;
+  }
+  
+  .lpu-prog-head {
+    margin: 0 auto 32px;
+    padding: 0 10px;
+  }
+  
+  .lpu-prog-title {
+    font-size: 24px;
+  }
+  
+  .lpu-filter-wrapper {
+    margin: 0 auto 32px;
+    padding: 0 10px;
+  }
+  
+  .lpu-filter-row {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 4px;
+    gap: 4px;
+    justify-content: stretch;
+  }
+  
+  .lpu-filter-btn {
+    flex: 1;
+    padding: 8px 6px;
+    font-size: 11px;
+    min-width: 0;
+    border-radius: 12px;
+  }
+  
+  .lpu-filter-btn span {
+    font-size: 9px;
+    margin-top: 1px;
+  }
+  
+  .lpu-prog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 4px;
+  }
+  
+  .lpu-card {
+    min-height: 320px;
+  }
+  
+  .lpu-card-body {
+    padding: 16px 16px 18px;
+  }
+  
+  .lpu-card-toprow h3 {
+    font-size: 17px;
+  }
+  
+  .lpu-card-sub {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  
+  .lpu-card-meta {
+    font-size: 12px;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-top: 10px;
+  }
+  
+  .lpu-apply-btn {
+    padding: 11px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+  
+  .lpu-badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
+
+/* Very Small Mobile (320px and below) */
+@media (max-width: 360px) {
+  .lpu-prog {
+    padding: 30px 6px;
+  }
+  
+  .lpu-filter-btn {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+  
+  .lpu-filter-btn span {
+    font-size: 8px;
+  }
+  
+  .lpu-card {
+    min-height: 280px;
+  }
+  
+  .lpu-card-body {
+    padding: 12px 12px 14px;
+  }
+  
+  .lpu-card-toprow h3 {
+    font-size: 15px;
+  }
+}
+
+/* ---------- Accessibility & Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .lpu-card, 
+  .lpu-card-img img, 
+  .lpu-apply-btn, 
+  .lpu-filter-btn {
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  .lpu-card:hover {
+    transform: none !important;
+  }
+  
+  .lpu-apply-btn:hover {
+    transform: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .lpu-prog {
+    padding: 20px;
+    background: white;
+  }
+  
+  .lpu-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .lpu-apply-btn {
+    background: #333 !important;
+    color: white !important;
+  }
+}

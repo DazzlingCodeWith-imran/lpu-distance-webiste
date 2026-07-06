@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Courses - LPU Distance</title>
+  <meta name="description"
+    content="Browse 200+ accredited distance-learning courses across business, technology, healthcare, and more.">
+  <meta property="og:title" content="Courses - LPU Distance">
+  <meta property="og:description" content="Find the accredited distance-learning program that's right for you.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/responsive.css">
+  <link rel="stylesheet" href="/src/assets/NavbarCss/Navbar.css">
+  <link rel="stylesheet" href="/src/assets/Program/ProgramHero.css">
+  <link rel="stylesheet" href="/src/assets/Program/AllProgram.css">
+  <link rel="stylesheet" href="/src/assets/Program/ExploreMore.css">
+
+
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <div class="scroll-progress-bar"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"
+        style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+
+        <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png" alt="LPU Logo" class="logo-main"
+          style="height:50px; width:auto; object-fit:contain;">
+
+        <img src="https://www.lpude.in/images/naac-logo.webp" alt="NAAC Logo" class="logo-naac"
+          style="height:50px; width:auto; margin-right: 40px;">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="universities.html">Universities</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn-premium" href="admissions.html">Apply Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="program-hero">
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+      <div class="program-hero-content" data-aos="fade-up">
+
+        <span class="hero-badge">
+          🎓 UGC-DEB Approved Distance Learning
+        </span>
+
+        <h1>
+          LPU Distance Education
+          <span>Programs 2026</span>
+        </h1>
+
+        <p>
+          Explore <strong>23+ UGC-DEB recognized</strong> programs including
+          <strong>MBA</strong>, <strong>MCA</strong>,
+          <strong>BBA</strong>, <strong>BCA</strong>,
+          <strong>B.Com</strong> and many more designed for
+          working professionals and aspiring students.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#programs" class="btn-primary">
+            Explore Programs
+          </a>
+
+          <a href="#contact" class="btn-outline">
+            Apply Now
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="programs-section">
+    <div class="programs-container">
+
+      <!-- Section Header -->
+      <div class="programs-header">
+        <div class="programs-tag">
+          <i class="fas fa-graduation-cap"></i>
+          Distance Education
+        </div>
+        <h2 class="programs-title">
+          Browse All <span>LPU</span> Distance Education Programs
+        </h2>
+        <p class="programs-subtitle">
+          Choose from a wide range of UGC-approved programs designed for
+          your career growth and academic excellence.
+        </p>
+        <div class="programs-divider">
+          <span></span>
+          <i class="fas fa-book-open"></i>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="programs-tabs-wrapper">
+        <div class="programs-tabs" role="tablist">
+          <button class="programs-tab active" data-tab="pg" role="tab">
+            <i class="fas fa-graduation-cap"></i>
+            PG Programs
+            <span>After Graduation</span>
+          </button>
+          <button class="programs-tab" data-tab="ug" role="tab">
+            <i class="fas fa-user-graduate"></i>
+            UG Programs
+            <span>After 12th</span>
+          </button>
+          <button class="programs-tab" data-tab="diploma" role="tab">
+            <i class="fas fa-certificate"></i>
+            Diploma Programs
+            <span>After 12th</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ============================================================
+                 TAB CONTENT: PG PROGRAMS
+                 ============================================================ -->
+      <div class="programs-content active" id="pg-content">
+        <div class="programs-grid">
+
+          <!-- PG Card 1 - MBA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹16,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MBA</h3>
+            <p class="programs-card-subtitle">Master of Business Administration</p>
+            <p class="programs-card-desc">Develop leadership and management skills with 12 specializations.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 12 Specializations</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline with 50%
+              marks</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 2 - MCA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹16,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MCA</h3>
+            <p class="programs-card-subtitle">Master of Computer Applications</p>
+            <p class="programs-card-desc">Advanced computing with specializations in AI, Cloud, Cybersecurity.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 5 Specializations</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation with Mathematics/Statistics
+            </p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 3 - M.Com -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹10,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">M.Com</h3>
+            <p class="programs-card-subtitle">Master of Commerce</p>
+            <p class="programs-card-desc">Advanced commerce education covering Accounting and Finance.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> B.Com or equivalent with 50% marks</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 4 - M.Sc. IT -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹16,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">M.Sc. IT</h3>
+            <p class="programs-card-subtitle">M.Sc. Information Technology</p>
+            <p class="programs-card-desc">Advanced IT program with industry-relevant curriculum.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation with relevant subject</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 5 - MA English -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA English</h3>
+            <p class="programs-card-subtitle">M.A. English</p>
+            <p class="programs-card-desc">Advanced English literature and language studies.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 6 - MA History -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA History</h3>
+            <p class="programs-card-subtitle">M.A. History</p>
+            <p class="programs-card-desc">In-depth study of Indian and world history.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 7 - MA Hindi -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Hindi</h3>
+            <p class="programs-card-subtitle">M.A. Hindi</p>
+            <p class="programs-card-desc">Advanced Hindi language and literature.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 8 - MA Punjabi -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Punjabi</h3>
+            <p class="programs-card-subtitle">M.A. Punjabi</p>
+            <p class="programs-card-desc">Punjabi language and literary studies.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 9 - MA Pol Sci -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Pol. Sci.</h3>
+            <p class="programs-card-subtitle">M.A. Political Science</p>
+            <p class="programs-card-desc">Political theory, governance, and international relations.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 10 - MA Maths -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Maths</h3>
+            <p class="programs-card-subtitle">M.A. Mathematics</p>
+            <p class="programs-card-desc">Advanced mathematical concepts and applications.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation with Mathematics</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 11 - MA Sociology -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Sociology</h3>
+            <p class="programs-card-subtitle">M.A. Sociology</p>
+            <p class="programs-card-desc">Study of society, social behavior and institutions.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 12 - MA Education -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Education</h3>
+            <p class="programs-card-subtitle">M.A. Education</p>
+            <p class="programs-card-desc">Educational theory, pedagogy and curriculum development.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 13 - MA Economics -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹8,000 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MA Economics</h3>
+            <p class="programs-card-subtitle">M.A. Economics</p>
+            <p class="programs-card-desc">Advanced study of economic theory and policy.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 2 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- PG Card 14 - MLIS -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">PG</span>
+              <span class="programs-fee">₹7,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">MLIS</h3>
+            <p class="programs-card-subtitle">Master of Library & Information Science</p>
+            <p class="programs-card-desc">Advanced library science and information management.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 1 Year</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> BLIS or equivalent</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+                 TAB CONTENT: UG PROGRAMS
+                 ============================================================ -->
+      <div class="programs-content" id="ug-content">
+        <div class="programs-grid">
+
+          <!-- UG Card 1 - BBA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">UG</span>
+              <span class="programs-fee">₹13,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">BBA</h3>
+            <p class="programs-card-subtitle">Bachelor of Business Administration</p>
+            <p class="programs-card-desc">Foundation in business management and leadership skills.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 3 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 in any stream with 50% marks</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- UG Card 2 - BCA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">UG</span>
+              <span class="programs-fee">₹13,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">BCA</h3>
+            <p class="programs-card-subtitle">Bachelor of Computer Applications</p>
+            <p class="programs-card-desc">Comprehensive IT program with practical skills.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 3 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 with Mathematics</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- UG Card 3 - B.Com -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">UG</span>
+              <span class="programs-fee">₹10,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">B.Com</h3>
+            <p class="programs-card-subtitle">Bachelor of Commerce</p>
+            <p class="programs-card-desc">Commerce, accounting and business studies.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 3 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 in any stream with 50% marks</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- UG Card 4 - B.Sc. IT -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">UG</span>
+              <span class="programs-fee">₹13,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">B.Sc. IT</h3>
+            <p class="programs-card-subtitle">B.Sc. Information Technology</p>
+            <p class="programs-card-desc">IT program with practical skills in software development.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 3 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 with Mathematics</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- UG Card 5 - BA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">UG</span>
+              <span class="programs-fee">₹7,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">BA</h3>
+            <p class="programs-card-subtitle">Bachelor of Arts</p>
+            <p class="programs-card-desc">Versatile arts program with multiple specializations.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 3 Years</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 in any stream</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- UG Card 6 - BLIS -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">UG</span>
+              <span class="programs-fee">₹7,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">BLIS</h3>
+            <p class="programs-card-subtitle">Bachelor of Library & Information Science</p>
+            <p class="programs-card-desc">Library science and information management fundamentals.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 1 Year</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+                 TAB CONTENT: DIPLOMA PROGRAMS
+                 ============================================================ -->
+      <div class="programs-content" id="diploma-content">
+        <div class="programs-grid">
+
+          <!-- Diploma Card 1 - DBA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">DIPLOMA</span>
+              <span class="programs-fee">₹13,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">DBA</h3>
+            <p class="programs-card-subtitle">Diploma in Business Administration</p>
+            <p class="programs-card-desc">Entry-level business program for career foundation.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 1 Year</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 in any stream</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- Diploma Card 2 - DCA -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">DIPLOMA</span>
+              <span class="programs-fee">₹13,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">DCA</h3>
+            <p class="programs-card-subtitle">Diploma in Computer Applications</p>
+            <p class="programs-card-desc">Foundation computer applications program.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 1 Year</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 in any stream</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+          <!-- Diploma Card 3 - DLIS -->
+          <div class="programs-card">
+            <div class="programs-card-header">
+              <span class="programs-badge">DIPLOMA</span>
+              <span class="programs-fee">₹7,500 <span>/sem</span></span>
+            </div>
+            <h3 class="programs-card-title">DLIS</h3>
+            <p class="programs-card-subtitle">Diploma in Library & Information Science</p>
+            <p class="programs-card-desc">Library and information science diploma program.</p>
+            <div class="programs-card-meta">
+              <span><i class="fas fa-clock"></i> 1 Year</span>
+              <span><i class="fas fa-layer-group"></i> 1 Specialization</span>
+            </div>
+            <p class="programs-card-eligibility"><strong>Eligibility:</strong> 10+2 in any stream</p>
+            <div class="programs-card-actions">
+              <button class="btn-primary">Apply Now</button>
+              <a href="#" class="btn-outline">View Details</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============================================================
+                 FOOTER LINKS
+                 ============================================================ -->
+      <div class="programs-footer">
+        <div class="programs-footer-links">
+          <div class="footer-link-item">
+            <i class="fas fa-file-alt"></i>
+            <div>
+              <h4>Admissions</h4>
+              <p>Simple 4-step admission process with affordable fees.</p>
+              <a href="#">View Admissions →</a>
+            </div>
+          </div>
+          <div class="footer-link-item">
+            <i class="fas fa-briefcase"></i>
+            <div>
+              <h4>Placements</h4>
+              <p>95%+ placement assistance with 2225+ recruiters.</p>
+              <a href="#">View Placements →</a>
+            </div>
+          </div>
+          <div class="footer-link-item">
+            <i class="fas fa-question-circle"></i>
+            <div>
+              <h4>FAQs</h4>
+              <p>Get answers about eligibility, fees, and more.</p>
+              <a href="#">View FAQs →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-padding text-center cta-section">
+    <div class="container" data-aos="zoom-in">
+      <h2 class="section-title text-white">Not sure which course fits you?</h2>
+      <p class="text-white-50 mb-4">Speak with a free admissions advisor to find your best-fit program.</p>
+      <a href="contact.html" class="btn-premium">Get Free Guidance</a>
+    </div>
+  </section>
+  <!-- ============================================================
+         EXPLORE MORE — Premium Section
+         ============================================================ -->
+    <section class="explore-section">
+        <div class="explore-container">
+
+            <!-- Section Header -->
+            <div class="explore-header">
+                <div class="explore-tag">
+                    <i class="fas fa-compass"></i>
+                    Explore More
+                </div>
+                <h2 class="explore-title">
+                    Your Journey <span>Starts Here</span>
+                </h2>
+                <p class="explore-subtitle">
+                    Everything you need to know about admissions, placements, 
+                    and frequently asked questions — all in one place.
+                </p>
+                <div class="explore-divider">
+                    <span></span>
+                    <i class="fas fa-infinity"></i>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Explore Grid -->
+            <div class="explore-grid">
+
+                <!-- Card 1: Admissions -->
+                <div class="explore-card" data-delay="0">
+                    <div class="explore-card-icon-wrapper">
+                        <div class="explore-card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <span class="explore-card-number">01</span>
+                    </div>
+                    <h3 class="explore-card-title">Admissions</h3>
+                    <p class="explore-card-text">
+                        Simple 4-step admission process with affordable fees. 
+                        Start your academic journey with us today.
+                    </p>
+                    <ul class="explore-card-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>4-Step Simple Process</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Affordable Fee Structure</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Merit-Based Scholarships</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Online Application Available</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="explore-card-link">
+                        View Admissions
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="explore-card-stats">
+                        <span>
+                            <i class="fas fa-users"></i>
+                            50,000+ Applied
+                        </span>
+                        <span>
+                            <i class="fas fa-calendar"></i>
+                            Open Now
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Placements -->
+                <div class="explore-card" data-delay="100">
+                    <div class="explore-card-icon-wrapper">
+                        <div class="explore-card-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <span class="explore-card-number">02</span>
+                    </div>
+                    <h3 class="explore-card-title">Placements</h3>
+                    <p class="explore-card-text">
+                        95%+ placement assistance with 2225+ recruiters. 
+                        Build your dream career with our dedicated support.
+                    </p>
+                    <ul class="explore-card-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>95%+ Placement Rate</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>2,225+ Recruiters</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fortune 500 Companies</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Career Guidance Support</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="explore-card-link">
+                        View Placements
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="explore-card-stats">
+                        <span>
+                            <i class="fas fa-building"></i>
+                            6,000+ Offers
+                        </span>
+                        <span>
+                            <i class="fas fa-trophy"></i>
+                            Top Recruiters
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 3: FAQs -->
+                <div class="explore-card" data-delay="200">
+                    <div class="explore-card-icon-wrapper">
+                        <div class="explore-card-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <span class="explore-card-number">03</span>
+                    </div>
+                    <h3 class="explore-card-title">FAQs</h3>
+                    <p class="explore-card-text">
+                        Get answers about eligibility, fees, programs, 
+                        and more. We're here to help you every step.
+                    </p>
+                    <ul class="explore-card-features">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Eligibility Queries</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fee Structure Details</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Program Information</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Support Available</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="explore-card-link">
+                        View FAQs
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="explore-card-stats">
+                        <span>
+                            <i class="fas fa-comments"></i>
+                            500+ Questions
+                        </span>
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            Quick Response
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="explore-cta-wrapper">
+                <div class="explore-cta">
+                    <div class="explore-cta-content">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h4>Need Personalized Guidance?</h4>
+                            <p>Connect with our academic advisors for one-on-one counseling.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="explore-cta-btn">
+                        <i class="fas fa-phone"></i>
+                        Talk to Advisor
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <a class="navbar-brand" href="index.html"
+            style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+
+            <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png" alt="LPU Logo" class="logo-main"
+              style="height:50px; width:auto; object-fit:contain;">
+
+
+
+          </a>
+          <p>Premium distance education admission platform helping students find accredited programs worldwide.</p>
+        </div>
+        <div class="col-lg-2 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="universities.html">Universities</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Education St, NY 10001</li>
+            <li class="mb-2"><i class="fas fa-phone me-2"></i> +1 234 567 890</li>
+            <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@LPU Distance.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-3 mb-4">
+          <h5>Newsletter</h5>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Email Address">
+            <button class="btn btn-primary" style="background:var(--primary-orange);border:none"
+              type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="src/script.js"></script>
+  <script src="/src/assets/Javascript/Program/Program.js"></script>
+</body>
+
+</html>
