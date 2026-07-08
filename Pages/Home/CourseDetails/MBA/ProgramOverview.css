@@ -1,0 +1,229 @@
+:root {
+    --primary-orange: #F97316;
+    --dark-orange: #EA580C;
+    --white: #FFFFFF;
+    --light-gray: #F8FAFC;
+    --section-gray: #F1F5F9;
+}
+
+/* Section */
+.overview-section {
+    padding: 3rem 0;
+    background: var(--white);
+}
+
+.container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Title */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #0F172A;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-orange);
+    border-radius: 9999px;
+}
+
+/* Overview Content */
+.overview-content {
+    margin-bottom: 2rem;
+}
+
+.overview-text {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+}
+
+.overview-text:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+/* Highlights Grid */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.highlight-card {
+    background: var(--light-gray);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.highlight-card:hover {
+    background: var(--white);
+    border-color: var(--primary-orange);
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.10);
+    transform: translateY(-2px);
+}
+
+.highlight-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    min-width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(249, 115, 22, 0.10);
+    border-radius: 50%;
+    color: var(--primary-orange);
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover .highlight-icon {
+    background: var(--primary-orange);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.highlight-icon svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.highlight-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #94A3B8;
+    font-weight: 600;
+    margin-bottom: 0.05rem;
+}
+
+.highlight-value {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.2;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .overview-section {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .overview-text {
+        font-size: 1rem;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .highlight-card {
+        padding: 1.25rem 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .overview-section {
+        padding: 5rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-title::after {
+        width: 60px;
+        height: 4px;
+    }
+    
+    .overview-text {
+        font-size: 1.0625rem;
+        line-height: 2;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .highlight-value {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overview-section {
+        padding: 2rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+    
+    .section-title::after {
+        width: 40px;
+        height: 2px;
+    }
+    
+    .overview-text {
+        font-size: 0.875rem;
+        line-height: 1.7;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+    }
+    
+    .highlight-card {
+        padding: 0.75rem 1rem;
+        gap: 0.6rem;
+    }
+    
+    .highlight-icon {
+        width: 2rem;
+        height: 2rem;
+        min-width: 2rem;
+    }
+    
+    .highlight-icon svg {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+    
+    .highlight-label {
+        font-size: 0.55rem;
+    }
+    
+    .highlight-value {
+        font-size: 0.75rem;
+    }
+}

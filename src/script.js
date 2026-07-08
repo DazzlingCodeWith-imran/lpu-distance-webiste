@@ -159,5 +159,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+const homeLink = document.getElementById("homeDropdown");
 
+homeLink.addEventListener("click", function (e) {
+    if (window.innerWidth > 991) {
+        window.location.href = this.getAttribute("href");
+    }
+});
 

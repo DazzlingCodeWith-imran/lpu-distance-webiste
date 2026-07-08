@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/src/assets/Program/ProgramHero.css">
   <link rel="stylesheet" href="/src/assets/Program/AllProgram.css">
   <link rel="stylesheet" href="/src/assets/Program/ExploreMore.css">
+   <link rel="stylesheet" href="/src/assets/Navbar/DropDown.css">
 
 
 </head>
@@ -33,36 +34,54 @@
   <div class="scroll-progress-bar"></div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html"
-        style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"
+                style="display:flex; align-items:center; gap:10px; text-decoration:none;">
 
-        <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png" alt="LPU Logo" class="logo-main"
-          style="height:50px; width:auto; object-fit:contain;">
+                <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png" alt="LPU Logo" class="logo-main"
+                    style="height:50px; width:auto; object-fit:contain;">
 
-        <img src="https://www.lpude.in/images/naac-logo.webp" alt="NAAC Logo" class="logo-naac"
-          style="height:50px; width:auto; margin-right: 40px;">
+                <img src="https://www.lpude.in/images/naac-logo.webp" alt="NAAC Logo" class="logo-naac"
+                    style="height:50px; width:auto; margin-right: 40px;">
 
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="universities.html">Universities</a></li>
-          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
-          <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn-premium" href="admissions.html">Apply Now</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                 <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle active"
+       href="/index.html"
+       id="homeDropdown"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+        Home
+    </a>
+
+    <ul class="dropdown-menu shadow border-0 rounded-3">
+        <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
+    <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
+    </ul>
+</li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="universities.html">Universities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn-premium" href="admissions.html">Apply Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   <section class="program-hero">
     <div class="hero-overlay"></div>
 
@@ -168,7 +187,7 @@
               marks</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/MBA/mba.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -189,7 +208,7 @@
             </p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/MCA/MCA.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -209,7 +228,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> B.Com or equivalent with 50% marks</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/Mcom/Mcom.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -229,7 +248,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation with relevant subject</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/msc-it/msc-it.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -249,7 +268,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-english/ma-english.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -269,7 +288,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-history/ma-history.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -289,7 +308,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-hindi/ma-hindi.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -309,7 +328,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-punjabi/ma-punjabi.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -329,7 +348,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-political-science/ma-political-science.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -349,7 +368,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation with Mathematics</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-mathematics/ma-mathematics.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -369,7 +388,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-sociology/ma-sociology.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -389,7 +408,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-education/ma-education.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -409,7 +428,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> Graduation in any discipline</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/ma-economics/ma-economics.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
@@ -429,7 +448,7 @@
             <p class="programs-card-eligibility"><strong>Eligibility:</strong> BLIS or equivalent</p>
             <div class="programs-card-actions">
               <button class="btn-primary">Apply Now</button>
-              <a href="#" class="btn-outline">View Details</a>
+              <a href="/Pages/Home/CourseDetails/mlis/mlis.html" class="btn-outline">View Details</a>
             </div>
           </div>
 
