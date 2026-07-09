@@ -53,6 +53,514 @@
     <link rel="stylesheet" href="/src/assets/Navbar/DropDown.css">
 </head>
 
+<style>
+     :root{
+    --primary-orange: #F97316;
+    --dark-orange: #EA580C;
+    --white: #FFFFFF;
+    --light-gray: #F8FAFC;
+    --section-gray: #F1F5F9;
+    --dark-text: #1E293B;
+    --gray-text: #64748B;
+    --font-primary: 'Inter', sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+    --transition: all 0.3s ease;
+}
+
+/* ===== PREMIUM FAQ SECTION CSS ===== */
+/* Add this to your FAQSections.css or style tag */
+
+.faq-premium-wrapper {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Decorative Elements */
+.faq-premium-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.faq-premium-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Container */
+.faq-premium-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Section */
+.faq-premium-header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.faq-premium-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.faq-premium-title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.faq-premium-title span {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.faq-premium-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Search & Filter Bar */
+.faq-premium-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    background: white;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(249, 115, 22, 0.1);
+}
+
+.faq-premium-search {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.faq-premium-search input {
+    width: 100%;
+    padding: 12px 20px 12px 48px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.faq-premium-search input:focus {
+    outline: none;
+    border-color: #F97316;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+}
+
+.faq-premium-search .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+.faq-premium-stats {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.faq-premium-stats strong {
+    color: #F97316;
+    font-size: 18px;
+}
+
+/* Category Buttons - Premium */
+.faq-premium-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+}
+
+.faq-premium-categories .cat-btn {
+    padding: 10px 22px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    background: white;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-premium-categories .cat-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50px;
+}
+
+.faq-premium-categories .cat-btn:hover {
+    border-color: #F97316;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.15);
+}
+
+.faq-premium-categories .cat-btn:hover .cat-count {
+    background: #F97316;
+    color: white;
+}
+
+.faq-premium-categories .cat-btn.active {
+    border-color: #F97316;
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: white;
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.3);
+    transform: translateY(-2px);
+}
+
+.faq-premium-categories .cat-btn.active .cat-count {
+    background: white;
+    color: #F97316;
+}
+
+.faq-premium-categories .cat-btn .cat-count {
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 1px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+/* FAQ List - Premium Cards */
+.faq-premium-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-premium-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    border: 1px solid #eef2f7;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.faq-premium-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #F97316, #EA580C);
+    border-radius: 4px 0 0 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.faq-premium-item:hover::before {
+    opacity: 1;
+}
+
+.faq-premium-item.visible {
+    display: block;
+    animation: faqSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes faqSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.faq-premium-item:hover {
+    border-color: #F97316;
+    box-shadow: 0 8px 35px rgba(249, 115, 22, 0.1);
+    transform: translateY(-2px);
+}
+
+.faq-premium-item .faq-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-premium-item .faq-question .q-icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F97316;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.faq-premium-item:hover .faq-question .q-icon {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    color: white;
+    transform: scale(1.1);
+}
+
+.faq-premium-item .faq-question .q-text {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.6;
+    padding-top: 6px;
+}
+
+.faq-premium-item .faq-question .q-toggle {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.faq-premium-item:hover .faq-question .q-toggle {
+    background: #F97316;
+    color: white;
+}
+
+.faq-premium-item .faq-answer {
+    padding: 12px 0 4px 50px;
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.8;
+    display: none;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 12px;
+}
+
+.faq-premium-item .faq-answer.open {
+    display: block;
+    animation: answerExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes answerExpand {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-premium-item .faq-answer .a-icon {
+    display: inline-block;
+    margin-right: 8px;
+    color: #22c55e;
+}
+
+/* No Results */
+.faq-premium-no-results {
+    text-align: center;
+    padding: 60px 20px;
+    display: none;
+}
+
+.faq-premium-no-results.show {
+    display: block;
+    animation: faqSlideIn 0.5s ease forwards;
+}
+
+.faq-premium-no-results .no-results-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.faq-premium-no-results h3 {
+    font-size: 22px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.faq-premium-no-results p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .faq-premium-title {
+        font-size: 32px;
+    }
+    
+    .faq-premium-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .faq-premium-stats {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-premium-wrapper {
+        padding: 40px 0;
+    }
+    
+    .faq-premium-title {
+        font-size: 28px;
+    }
+    
+    .faq-premium-subtitle {
+        font-size: 16px;
+    }
+    
+    .faq-premium-categories .cat-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    .faq-premium-item {
+        padding: 16px 18px;
+    }
+    
+    .faq-premium-item .faq-question .q-text {
+        font-size: 14px;
+    }
+    
+    .faq-premium-item .faq-answer {
+        padding-left: 30px;
+        font-size: 14px;
+    }
+    
+    .faq-premium-item .faq-question .q-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-premium-title {
+        font-size: 24px;
+    }
+    
+    .faq-premium-categories {
+        gap: 6px;
+    }
+    
+    .faq-premium-categories .cat-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+        gap: 4px;
+    }
+    
+    .faq-premium-categories .cat-btn .cat-count {
+        padding: 0px 8px;
+        font-size: 11px;
+    }
+    
+    .faq-premium-item .faq-question .q-text {
+        font-size: 13px;
+    }
+}
+
+/* Scrollbar Styling */
+.faq-premium-wrapper ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.faq-premium-wrapper ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.faq-premium-wrapper ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+    border-radius: 10px;
+}
+</style>
 <body>
     <div id="preloader">
         <div class="spinner"></div>
@@ -101,6 +609,7 @@
                     <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
                     <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/Faq.html">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-3"><a class="btn-premium" href="admissions.html">Apply Now</a></li>
                 </ul>
@@ -205,1843 +714,54 @@
 
         <div class="dots" id="dots" role="tablist" aria-label="Banner slides"></div>
     </section>
-    <section class="why-section">
-        <div class="why-container">
-            <!-- Section Header -->
-            <div class="why-header">
-                <span class="why-badge">
-                    <i class="fas fa-star"></i>
-                    Why Choose LPU
-                </span>
-                <h2 class="why-title">
-                    LPU Online &amp; Distance Education <span>in Punjab</span>
-                </h2>
-                <div class="why-divider">
-                    <span></span>
-                    <i class="fas fa-graduation-cap"></i>
-                    <span></span>
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="why-content">
-                <!-- Left: Description -->
-                <div class="why-text">
-                    <p class="why-description">
-                        LPU Distance Education in Punjab and LPU online courses offer students and working professionals
-                        across the state access to world-class higher education from one of India's top-ranked
-                        universities. <strong>Lovely Professional University</strong>, ranked <strong>5th in
-                            India</strong> by THE Rankings 2026 and <strong>NAAC A++</strong> graded, provides UGC-DEB
-                        approved online and distance learning programs that are affordable, flexible, and
-                        industry-relevant.
-                    </p>
-                    <p class="why-description">
-                        Whether you're a working professional in Jalandhar seeking an online MBA, a student in Ludhiana
-                        looking for an online BCA or BBA degree, or anyone in Punjab wanting quality distance education
-                        — LPU's online &amp; distance programs are designed for you. With fees starting from just
-                        <strong>₹7,500 per semester</strong>, LPUDE is one of the cheapest distance MBA options in India
-                        while maintaining top quality.
-                    </p>
-                    <p class="why-description">
-                        Our Punjab admission center provides complete support — from free career counseling and program
-                        selection to document verification, fee payment assistance, and exam guidance. MBA for working
-                        professionals, online degree programs, and all LPU distance courses are available for students
-                        from <strong>Jalandhar, Ludhiana, Amritsar, Patiala</strong>, and all of Punjab.
-                    </p>
-
-                    <!-- Quick Stats -->
-                    <div class="why-stats">
-                        <div class="why-stat">
-                            <span class="why-stat-number">5<sup>th</sup></span>
-                            <span class="why-stat-label">THE Ranking 2026</span>
-                        </div>
-                        <div class="why-stat-divider"></div>
-                        <div class="why-stat">
-                            <span class="why-stat-number">A++</span>
-                            <span class="why-stat-label">NAAC Grade</span>
-                        </div>
-                        <div class="why-stat-divider"></div>
-                        <div class="why-stat">
-                            <span class="why-stat-number">₹7.5K</span>
-                            <span class="why-stat-label">Fee/Semester</span>
-                        </div>
-                        <div class="why-stat-divider"></div>
-                        <div class="why-stat">
-                            <span class="why-stat-number">23+</span>
-                            <span class="why-stat-label">Programs</span>
-                        </div>
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="why-actions">
-                        <a href="#" class="why-btn-primary">
-                            <i class="fas fa-graduation-cap"></i>
-                            Apply Now
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#" class="why-btn-secondary">
-                            <i class="fas fa-phone"></i>
-                            Get Free Counseling
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right: Features Grid -->
-                <div class="why-features">
-                    <div class="why-feature">
-                        <div class="why-feature-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h4 class="why-feature-title">Top Ranked</h4>
-                        <p class="why-feature-desc">5th in India by THE Rankings 2026</p>
-                    </div>
-
-                    <div class="why-feature">
-                        <div class="why-feature-icon">
-                            <i class="fas fa-building-columns"></i>
-                        </div>
-                        <h4 class="why-feature-title">NAAC A++</h4>
-                        <p class="why-feature-desc">Highest accreditation grade</p>
-                    </div>
-
-                    <div class="why-feature">
-                        <div class="why-feature-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h4 class="why-feature-title">UGC-DEB Approved</h4>
-                        <p class="why-feature-desc">Valid for government jobs</p>
-                    </div>
-
-                    <div class="why-feature">
-                        <div class="why-feature-icon">
-                            <i class="fas fa-rupee-sign"></i>
-                        </div>
-                        <h4 class="why-feature-title">Affordable Fees</h4>
-                        <p class="why-feature-desc">Starting from ₹7,500/sem</p>
-                    </div>
-
-                    <div class="why-feature">
-                        <div class="why-feature-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h4 class="why-feature-title">Placement Support</h4>
-                        <p class="why-feature-desc">2225+ recruiters, 6000+ offers</p>
-                    </div>
-
-                    <div class="why-feature">
-                        <div class="why-feature-icon">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <h4 class="why-feature-title">Punjab Center</h4>
-                        <p class="why-feature-desc">Jalandhar-Delhi GT Road, Phagwara</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="lpu-section" aria-labelledby="lpuHeading">
-        <div class="lpu-container">
-
-            <div class="lpu-grid">
-
-                <!-- Left Content -->
-                <div class="lpu-main" data-aos="fade-right">
-
-                    <div class="lpu-eyebrow">
-                        <span class="lpu-eyebrow-dot"></span>
-                        Authorized Admission Center
-                    </div>
-
-                    <h2 id="lpuHeading" class="lpu-title" data-aos="fade-up">
-                        LPU Distance Education
-                        <span class="lpu-title-accent">in Punjab</span>
-                    </h2>
-
-                    <p class="lpu-text">
-                        Welcome to the authorized admission center for LPU Distance Education in Punjab.
-                        Explore LPU distance courses, LPU online courses, and LPU distance learning programs
-                        from Lovely Professional University — India's NAAC A++ graded university.
-                        Get your MBA, MCA, BBA, BCA, B.Com, M.Com and 20+ other degrees through
-                        flexible online education designed for working professionals.
-                    </p>
-
-                    <div class="lpu-degree-row">
-                        <span class="lpu-chip lpu-chip-solid">MBA</span>
-                        <span class="lpu-chip">MCA</span>
-                        <span class="lpu-chip">BBA</span>
-                        <span class="lpu-chip">BCA</span>
-                        <span class="lpu-chip">B.Com</span>
-                        <span class="lpu-chip">M.Com</span>
-                        <span class="lpu-chip lpu-chip-more">+20 More Degrees</span>
-                    </div>
-
-                    <div class="lpu-cta-row">
-                        <a href="courses.html" class="lpu-btn-primary">
-                            Explore Programs →
-                        </a>
-
-                        <a href="contact.html" class="lpu-btn-secondary">
-                            Check Eligibility
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Right Side -->
-                <div class="lpu-right" data-aos="fade-left">
-
-                    <!-- Floating Badge -->
-                    <div style="
-        position:absolute;
-        top:15px;
-        left:-15px;
-        background:#ff7a00;
-        color:#fff;
-        padding:10px 18px;
-        border-radius:50px;
-        font-weight:600;
-        box-shadow:0 10px 25px rgba(255,122,0,.35);
-        animation:float 3s ease-in-out infinite;
-        z-index:10;">
-                        ⭐ NAAC A++
-                    </div>
-
-                    <!-- Main Image -->
-                    <img src="https://www.lpu.in/_next/image?url=%2Fimages%2Fhomepage%2Fholistic-learning%2Fbharat-innovation-challenge.webp&w=1024&q=75"
-                        alt="LPU Distance Education" style="
-          width:100%;
-          max-width:430px;
-          border:6px solid #ff7a00;
-          border-radius:30px;
-          background:#fff;
-          box-shadow:0 20px 50px rgba(255,122,0,.25);
-          animation:floatImage 5s ease-in-out infinite;
-          transition:.4s;
-          ">
-
-                    <!-- Bottom Card -->
-                    <div style="
-        margin-top:25px;
-        background:#fff;
-        border:2px solid #eee;
-        border-radius:20px;
-        padding:25px;
-        box-shadow:0 10px 30px rgba(0,0,0,.08);">
-
-                        <h3 style="margin-bottom:15px;color:#ff7a00;">
-                            Available Across Punjab
-                        </h3>
-
-                        <ul style="
-          list-style:none;
-          padding:0;
-          margin:0;
-          line-height:2;
-          color:#555;
-          font-size:16px;">
-
-                            <li>📍 Jalandhar</li>
-                            <li>📍 Ludhiana</li>
-                            <li>📍 Amritsar</li>
-                            <li>📍 Patiala</li>
-                            <li>📍 Bathinda</li>
-                            <li>📍 All Districts of Punjab</li>
-
-                        </ul>
-
-                        <div style="
-          display:flex;
-          justify-content:space-between;
-          margin-top:25px;
-          text-align:center;">
-
-                            <div>
-                                <h2 style="color:#ff7a00;margin:0;">A++</h2>
-                                <small>NAAC</small>
-                            </div>
-
-                            <div>
-                                <h2 style="color:#ff7a00;margin:0;">UGC</h2>
-                                <small>Approved</small>
-                            </div>
-
-                            <div>
-                                <h2 style="color:#ff7a00;margin:0;">20+</h2>
-                                <small>Courses</small>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-    <style>
-        .lpu-grid {
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-        }
-
-
-        .lpu-right {
-            position: relative;
-            text-align: center;
-        }
-
-        .lpu-right img:hover {
-            transform: scale(1.04);
-            box-shadow: 0 25px 60px rgba(255, 122, 0, .35);
-        }
-
-        @keyframes floatImage {
-
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-18px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes float {
-
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-
-        }
-
-        @media(max-width:991px) {
-
-            .lpu-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .lpu-right {
-                margin-top: 40px;
-            }
-
-        }
-    </style>
-    <section class="lpu-cta">
-        <div class="lpu-cta-glow"></div>
-        <div class="lpu-cta-container">
-            <h2 class="lpu-cta-title">LPU Distance Education — Affordable Online Degree Programs</h2>
-            <p class="lpu-cta-text">
-                Get free counseling on the best LPU Distance Education program for your career goals —
-                perfect for working professionals across India.
+   
+<!-- ===== PREMIUM FAQ SECTION ===== -->
+<section class="faq-premium-wrapper" id="faq-section">
+    <div class="faq-premium-container">
+        
+        <!-- Header -->
+        <div class="faq-premium-header">
+            <span class="faq-premium-badge">
+                <i class="fas fa-question-circle"></i> Knowledge Base
+            </span>
+            <h2 class="faq-premium-title">
+                Frequently Asked <span>Questions</span>
+            </h2>
+            <p class="faq-premium-subtitle">
+                Everything you need to know about LPU Distance Education. Find answers to your queries instantly.
             </p>
-            <button class="lpu-cta-btn" type="button">
-                <span class="lpu-cta-btn-icon">📞</span>
-                Request Call Back
-            </button>
-        </div>
-    </section>
-    <!-- ============================================================
-   ANNOUNCEMENTS SECTION — LPU Distance Education 2026
-   Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
-   ============================================================ -->
-
-
-
-
-    <section class="lpu-prog" id="programs">
-        <div class="lpu-prog-container">
-
-            <div class="lpu-prog-head">
-                <h2 class="lpu-prog-title">LPU Online &amp; Distance Education Programs in Punjab</h2>
-                <p class="lpu-prog-subtitle">Choose from 23+ UGC-DEB recognized online &amp; distance programs for
-                    students and working professionals across Punjab</p>
-            </div>
-
-            <!-- Filter tabs -->
-            <div class="lpu-filter-row" role="tablist" aria-label="Program level filter">
-                <button class="lpu-filter-btn active" data-filter="pg" role="tab" aria-selected="true">PG Programs
-                    <span>After Graduation</span></button>
-                <button class="lpu-filter-btn" data-filter="ug" role="tab" aria-selected="false">UG Programs <span>After
-                        12th</span></button>
-                <button class="lpu-filter-btn" data-filter="diploma" role="tab" aria-selected="false">Diploma Programs
-                    <span>After 12th</span></button>
-            </div>
-
-            <!-- Cards grid -->
-            <div class="lpu-prog-grid" id="programGrid">
-
-                <!-- ============ PG PROGRAMS (real data) ============ -->
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/mba.jpg"
-                            alt="MBA Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MBA</h3>
-                            <span class="lpu-badge">12 Specializations</span>
-                        </div>
-                        <p class="lpu-card-sub">Master of Business Administration</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹16,500/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MBA</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/mca.jpg"
-                            alt="MCA Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MCA</h3>
-                            <span class="lpu-badge">5 Specializations</span>
-                        </div>
-                        <p class="lpu-card-sub">Master of Computer Applications</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹16,500/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MCA</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/mcom.jpg"
-                            alt="M.Com Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>M.Com</h3>
-                        </div>
-                        <p class="lpu-card-sub">Master of Commerce</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹10,500/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for M.Com</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/msc-it.jpg"
-                            alt="M.Sc. IT Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>M.Sc. IT</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.Sc. Information Technology</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹16,500/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for M.Sc. IT</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-english.jpg"
-                            alt="MA English Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA English</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. English</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA English</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-history.jpg"
-                            alt="MA History Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA History</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. History</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA History</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-hindi.jpg"
-                            alt="MA Hindi Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Hindi</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Hindi</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Hindi</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-punjabi.jpg"
-                            alt="MA Punjabi Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Punjabi</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Punjabi</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Punjabi</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-political-science.jpg"
-                            alt="MA Pol. Sci. Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Pol. Sci.</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Political Science</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Pol. Sci.</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-mathematics.jpg"
-                            alt="MA Maths Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Maths</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Mathematics</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Maths</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-sociology.jpg"
-                            alt="MA Sociology Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Sociology</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Sociology</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Sociology</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-education.jpg"
-                            alt="MA Education Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Education</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Education</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Education</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/ma-economics.jpg"
-                            alt="MA Economics Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MA Economics</h3>
-                        </div>
-                        <p class="lpu-card-sub">M.A. Economics</p>
-                        <div class="lpu-card-meta"><span>⏱ 2 Years</span><span>💰 ₹8,000/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MA Economics</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="pg">
-                    <div class="lpu-card-img">
-                        <img src="https://www.lpude.in/images/explore-program/mlis.jpg"
-                            alt="MLIS Distance Education LPU Punjab" loading="lazy"
-                            onerror="this.parentElement.classList.add('lpu-img-fallback')">
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>MLIS</h3>
-                        </div>
-                        <p class="lpu-card-sub">Master of Library &amp; Information Science</p>
-                        <div class="lpu-card-meta"><span>⏱ 1 Year</span><span>💰 ₹7,500/sem</span></div>
-                        <button class="lpu-apply-btn">Apply for MLIS</button>
-                    </div>
-                </article>
-
-                <!-- ============ UG PROGRAMS (placeholder — replace with real data) ============ -->
-                <article class="lpu-card" data-category="ug">
-                    <div class="lpu-card-img lpu-img-fallback">
-                        <div class="lpu-fallback-icon">🎓</div>
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>BBA</h3>
-                        </div>
-                        <p class="lpu-card-sub">Bachelor of Business Administration</p>
-                        <div class="lpu-card-meta"><span>⏱ 3 Years</span><span>💰 Add fee</span></div>
-                        <button class="lpu-apply-btn">Apply for BBA</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="ug">
-                    <div class="lpu-card-img lpu-img-fallback">
-                        <div class="lpu-fallback-icon">🎓</div>
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>BCA</h3>
-                        </div>
-                        <p class="lpu-card-sub">Bachelor of Computer Applications</p>
-                        <div class="lpu-card-meta"><span>⏱ 3 Years</span><span>💰 Add fee</span></div>
-                        <button class="lpu-apply-btn">Apply for BCA</button>
-                    </div>
-                </article>
-
-                <article class="lpu-card" data-category="ug">
-                    <div class="lpu-card-img lpu-img-fallback">
-                        <div class="lpu-fallback-icon">🎓</div>
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>B.Com</h3>
-                        </div>
-                        <p class="lpu-card-sub">Bachelor of Commerce</p>
-                        <div class="lpu-card-meta"><span>⏱ 3 Years</span><span>💰 Add fee</span></div>
-                        <button class="lpu-apply-btn">Apply for B.Com</button>
-                    </div>
-                </article>
-
-                <!-- ============ DIPLOMA PROGRAMS (placeholder — replace with real data) ============ -->
-                <article class="lpu-card" data-category="diploma">
-                    <div class="lpu-card-img lpu-img-fallback">
-                        <div class="lpu-fallback-icon">📜</div>
-                    </div>
-                    <div class="lpu-card-body">
-                        <div class="lpu-card-toprow">
-                            <h3>Diploma Program 1</h3>
-                        </div>
-                        <p class="lpu-card-sub">Add program name here</p>
-                        <div class="lpu-card-meta"><span>⏱ Add duration</span><span>💰 Add fee</span></div>
-                        <button class="lpu-apply-btn">Apply Now</button>
-                    </div>
-                </article>
-
-            </div>
-
-            <p class="lpu-empty-msg" id="emptyMsg">No programs found in this category.</p>
-
-        </div>
-    </section>
-
-    <!-- ============================================================
-   UNIVERSITY HIGHLIGHTS — Premium Glassmorphism Design
-   Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
-   ============================================================ -->
-
-    <section class="uni-highlights">
-        <!-- Background Decorations -->
-        <div class="uni-bg-decorations">
-            <div class="uni-bg-circle uni-bg-circle-1"></div>
-            <div class="uni-bg-circle uni-bg-circle-2"></div>
-            <div class="uni-bg-circle uni-bg-circle-3"></div>
-            <div class="uni-bg-circle uni-bg-circle-4"></div>
         </div>
 
-        <div class="uni-container">
-            <!-- Section Header -->
-            <div class="uni-header">
-                <span class="uni-tag">
-                    <i class="fas fa-sparkles"></i>
-                    Featured Stories
-                </span>
-                <h2 class="uni-title">
-                    University <span>Highlights</span>
-                </h2>
-                <p class="uni-subtitle">
-                    Discover the remarkable achievements, events, and milestones
-                    that shape our vibrant campus community.
-                </p>
-                <div class="uni-divider">
-                    <span></span>
-                    <i class="fas fa-graduation-cap"></i>
-                    <span></span>
-                </div>
+        <!-- Toolbar -->
+        <div class="faq-premium-toolbar">
+            <div class="faq-premium-search">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="faqSearchInput" placeholder="Search FAQs..." />
             </div>
-
-            <!-- Filter Tabs -->
-            <div class="uni-filter" role="tablist">
-                <button class="uni-filter-btn active" data-filter="all" role="tab">
-                    <i class="fas fa-th-large"></i> All
-                </button>
-                <button class="uni-filter-btn" data-filter="achievement" role="tab">
-                    <i class="fas fa-award"></i> Achievements
-                </button>
-                <button class="uni-filter-btn" data-filter="sports" role="tab">
-                    <i class="fas fa-trophy"></i> Sports
-                </button>
-                <button class="uni-filter-btn" data-filter="cultural" role="tab">
-                    <i class="fas fa-music"></i> Cultural
-                </button>
-                <button class="uni-filter-btn" data-filter="international" role="tab">
-                    <i class="fas fa-globe"></i> International
-                </button>
-            </div>
-
-            <!-- Cards Grid -->
-            <div class="uni-grid" id="uniGrid">
-
-                <!-- Card 1 -->
-                <article class="uni-card" data-category="achievement">
-                    <div class="uni-card-image">
-                        <img src="https://www.lpude.in/images/home-slider/slide4.jpg" alt="PM Inaugurated 106th ISC"
-                            loading="lazy" />
-                        <div class="uni-card-overlay">
-                            <span class="uni-card-badge">Achievement</span>
-                            <span class="uni-card-date"><i class="far fa-calendar-alt"></i> 2024</span>
-                        </div>
-                    </div>
-                    <div class="uni-card-body">
-                        <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-award"></i></span>
-                            <span class="uni-card-category">National Event</span>
-                        </div>
-                        <h3 class="uni-card-title">PM Inaugurated 106th Indian Science Congress</h3>
-                        <p class="uni-card-text">
-                            Honorable Prime Minister inaugurated the 106th Indian Science Congress
-                            hosted at LPU, marking a historic milestone in India's scientific journey.
-                        </p>
-                        <a href="#" class="uni-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 2 -->
-                <article class="uni-card" data-category="sports">
-                    <div class="uni-card-image">
-                        <img src="https://www.lpude.in/images/19th-asian-games.jpg" alt="19th Asian Games"
-                            loading="lazy" />
-                        <div class="uni-card-overlay">
-                            <span class="uni-card-badge">Sports</span>
-                            <span class="uni-card-date"><i class="far fa-calendar-alt"></i> 2024</span>
-                        </div>
-                    </div>
-                    <div class="uni-card-body">
-                        <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-trophy"></i></span>
-                            <span class="uni-card-category">International</span>
-                        </div>
-                        <h3 class="uni-card-title">19th Asian Games Medal Triumph</h3>
-                        <p class="uni-card-text">
-                            LPU students brought glory to the nation by winning multiple medals
-                            at the 19th Asian Games, showcasing exceptional sporting excellence.
-                        </p>
-                        <a href="#" class="uni-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="uni-card" data-category="cultural">
-                    <div class="uni-card-image">
-                        <img src="https://www.lpude.in/images/spectra-2024.jpg" alt="Spectra 2024" loading="lazy" />
-                        <div class="uni-card-overlay">
-                            <span class="uni-card-badge">Cultural</span>
-                            <span class="uni-card-date"><i class="far fa-calendar-alt"></i> 2024</span>
-                        </div>
-                    </div>
-                    <div class="uni-card-body">
-                        <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-music"></i></span>
-                            <span class="uni-card-category">Festival</span>
-                        </div>
-                        <h3 class="uni-card-title">Spectra 2024 Mega Cultural Fest</h3>
-                        <p class="uni-card-text">
-                            India's most vibrant cultural festival featuring international artists,
-                            200+ events, and over 50,000 attendees from across the globe.
-                        </p>
-                        <a href="#" class="uni-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="uni-card" data-category="national">
-                    <div class="uni-card-image">
-                        <img src="https://www.lpude.in/images/one-india2025.webp" alt="One India 2025" loading="lazy" />
-                        <div class="uni-card-overlay">
-                            <span class="uni-card-badge">National</span>
-                            <span class="uni-card-date"><i class="far fa-calendar-alt"></i> 2025</span>
-                        </div>
-                    </div>
-                    <div class="uni-card-body">
-                        <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-flag-india"></i></span>
-                            <span class="uni-card-category">Diversity</span>
-                        </div>
-                        <h3 class="uni-card-title">One India 2025 Cultural Extravaganza</h3>
-                        <p class="uni-card-text">
-                            Celebrating India's rich cultural diversity with spectacular
-                            performances representing all 28 states and 8 union territories.
-                        </p>
-                        <a href="#" class="uni-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 5 -->
-                <article class="uni-card" data-category="sports">
-                    <div class="uni-card-image">
-                        <img src="https://www.lpude.in/images/15th-annual-sports-meet.jpg" alt="15th Annual Sports Meet"
-                            loading="lazy" />
-                        <div class="uni-card-overlay">
-                            <span class="uni-card-badge">Sports</span>
-                            <span class="uni-card-date"><i class="far fa-calendar-alt"></i> 2024</span>
-                        </div>
-                    </div>
-                    <div class="uni-card-body">
-                        <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-running"></i></span>
-                            <span class="uni-card-category">Annual Event</span>
-                        </div>
-                        <h3 class="uni-card-title">15th Annual Sports Meet</h3>
-                        <p class="uni-card-text">
-                            India's largest university sports meet featuring 50+ disciplines,
-                            5,000+ athletes, and 100+ institutions competing for glory.
-                        </p>
-                        <a href="#" class="uni-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Card 6 -->
-                <article class="uni-card" data-category="international">
-                    <div class="uni-card-image">
-                        <img src="https://www.lpude.in/images/one-world-2025.jpg" alt="One World 2025" loading="lazy" />
-                        <div class="uni-card-overlay">
-                            <span class="uni-card-badge">International</span>
-                            <span class="uni-card-date"><i class="far fa-calendar-alt"></i> 2025</span>
-                        </div>
-                    </div>
-                    <div class="uni-card-body">
-                        <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-globe-americas"></i></span>
-                            <span class="uni-card-category">Global</span>
-                        </div>
-                        <h3 class="uni-card-title">One World 2025 International Festival</h3>
-                        <p class="uni-card-text">
-                            Global cultural celebration with 60+ countries participating,
-                            promoting cross-cultural understanding and global harmony.
-                        </p>
-                        <a href="#" class="uni-card-link">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- Empty Message -->
-            <p class="uni-empty-msg" id="uniEmptyMsg">No highlights found in this category.</p>
-
-            <!-- View All Button -->
-            <div class="uni-footer">
-                <a href="#" class="uni-view-all">
-                    <i class="fas fa-eye"></i>
-                    View All Highlights
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#" class="uni-view-all-secondary">
-                    <i class="fas fa-bell"></i>
-                    Subscribe for Updates
-                </a>
+            <div class="faq-premium-stats">
+                <strong id="faqTotalCount">76</strong> Questions &amp; Answers
             </div>
         </div>
-    </section>
 
-
-    <!-- ============================================================
-         GET YOUR DREAM DEGREE — Premium Left-Right Layout
-         ============================================================ -->
-
-
-    <!-- ============================================================
-         VIBRANT LPUDE EXPERIENCE — Premium Modern Layout
-         ============================================================ -->
-    <section class="experience-section">
-        <div class="experience-container">
-
-            <!-- Section Header -->
-            <div class="experience-header">
-                <div class="experience-tag">
-                    <i class="fas fa-sparkles"></i>
-                    Why Choose LPUDE
-                </div>
-                <h2 class="experience-title">
-                    Vibrant <span>LPUDE</span> Experience
-                </h2>
-                <p class="experience-subtitle">
-                    Discover a world of opportunities with our comprehensive learning
-                    environment designed for your success.
-                </p>
-                <div class="experience-divider">
-                    <span></span>
-                    <i class="fas fa-infinity"></i>
-                    <span></span>
-                </div>
-            </div>
-
-            <!-- Experience Cards -->
-            <div class="experience-grid">
-
-                <!-- Card 1 - Personal Contact Programmes -->
-                <div class="experience-card" data-delay="0">
-                    <div class="experience-card-image">
-                        <img src="https://www.lpude.in/images/exp-new.jpg" alt="Personal Contact Programmes"
-                            loading="lazy" />
-                        <div class="experience-card-overlay">
-                            <span class="experience-card-number">01</span>
-                            <span class="experience-card-badge">Interactive</span>
-                        </div>
-                    </div>
-                    <div class="experience-card-body">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3 class="experience-card-title">Personal Contact Programmes</h3>
-                        <p class="experience-card-text">
-                            Interactive face-to-face sessions with expert faculty for
-                            enhanced learning and practical knowledge.
-                        </p>
-                        <a href="#" class="experience-card-link">
-                            Learn More <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <div class="experience-card-stats">
-                            <span><i class="fas fa-user-graduate"></i> 5000+ Students</span>
-                            <span><i class="fas fa-calendar"></i> Annual Events</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 - Placement Assistance -->
-                <div class="experience-card" data-delay="100">
-                    <div class="experience-card-image">
-                        <img src="https://www.lpude.in/images/placements.jpg" alt="Placement Assistance"
-                            loading="lazy" />
-                        <div class="experience-card-overlay">
-                            <span class="experience-card-number">02</span>
-                            <span class="experience-card-badge">Career</span>
-                        </div>
-                    </div>
-                    <div class="experience-card-body">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3 class="experience-card-title">Placement Assistance</h3>
-                        <p class="experience-card-text">
-                            Dedicated placement cell with 2225+ recruiters and
-                            comprehensive career guidance for your future.
-                        </p>
-                        <a href="#" class="experience-card-link">
-                            Learn More <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <div class="experience-card-stats">
-                            <span><i class="fas fa-building"></i> 2225+ Recruiters</span>
-                            <span><i class="fas fa-trophy"></i> 6000+ Offers</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 - Convocation -->
-                <div class="experience-card" data-delay="200">
-                    <div class="experience-card-image">
-                        <img src="https://www.lpude.in/images/convocation-2024.jpg" alt="Convocation" loading="lazy" />
-                        <div class="experience-card-overlay">
-                            <span class="experience-card-number">03</span>
-                            <span class="experience-card-badge">Celebration</span>
-                        </div>
-                    </div>
-                    <div class="experience-card-body">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="experience-card-title">Convocation</h3>
-                        <p class="experience-card-text">
-                            Grand convocation ceremony celebrating academic achievements
-                            and marking the beginning of new journeys.
-                        </p>
-                        <a href="#" class="experience-card-link">
-                            Learn More <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <div class="experience-card-stats">
-                            <span><i class="fas fa-users"></i> 10000+ Graduates</span>
-                            <span><i class="fas fa-star"></i> Annual Event</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Bottom CTA -->
-            <div class="experience-footer">
-                <div class="experience-cta">
-                    <span class="cta-text">Ready to start your journey?</span>
-                    <a href="#" class="cta-button">
-                        Join LPUDE Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-
+        <!-- Category Buttons -->
+        <div class="faq-premium-categories" id="categoryBtns">
+            <!-- JS se generate honge -->
         </div>
-    </section>
 
-    <!-- ============================================================
-         WORKSHOPS & SEMINARS — Premium Carousel Design
-         ============================================================ -->
-    <section class="seminars-section">
-        <div class="seminars-container">
-
-            <!-- Section Header -->
-            <div class="seminars-header">
-                <div class="seminars-tag">
-                    <i class="fas fa-microphone"></i>
-                    Upcoming Events
-                </div>
-                <h2 class="seminars-title">
-                    Workshops & <span>Seminars</span>
-                </h2>
-                <p class="seminars-subtitle">
-                    Enhance your skills with our expert-led workshops and seminars
-                    designed for professional growth.
-                </p>
-                <div class="seminars-divider">
-                    <span></span>
-                    <i class="fas fa-chalkboard-user"></i>
-                    <span></span>
-                </div>
-            </div>
-
-            <!-- Carousel -->
-            <div class="seminars-carousel-wrapper">
-                <div class="seminars-carousel">
-                    <div class="seminars-track" id="seminarsTrack">
-
-                        <!-- Slide 1 -->
-                        <div class="seminars-slide">
-                            <div class="seminars-card">
-                                <div class="seminars-card-image">
-                                    <img src="https://www.lpude.in/images/full/seminar-1.jpg" alt="Management Seminar"
-                                        loading="lazy" />
-                                    <div class="seminars-card-overlay">
-                                        <span class="seminars-card-badge">📊 Management</span>
-                                        <span class="seminars-card-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            Coming Soon
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="seminars-card-body">
-                                    <div class="seminars-card-icon">
-                                        <i class="fas fa-chart-line"></i>
-                                    </div>
-                                    <h3 class="seminars-card-title">Management Seminar</h3>
-                                    <p class="seminars-card-text">
-                                        Strategic leadership and management techniques
-                                        for modern business environments.
-                                    </p>
-                                    <div class="seminars-card-meta">
-                                        <span><i class="fas fa-clock"></i> 3 Days</span>
-                                        <span><i class="fas fa-users"></i> 50+ Seats</span>
-                                        <span><i class="fas fa-certificate"></i> Certificate</span>
-                                    </div>
-                                    <a href="#" class="seminars-card-link">
-                                        Register Now <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="seminars-slide">
-                            <div class="seminars-card">
-                                <div class="seminars-card-image">
-                                    <img src="https://www.lpude.in/images/full/seminar-2.jpg" alt="IT Workshop"
-                                        loading="lazy" />
-                                    <div class="seminars-card-overlay">
-                                        <span class="seminars-card-badge">💻 Technology</span>
-                                        <span class="seminars-card-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            Coming Soon
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="seminars-card-body">
-                                    <div class="seminars-card-icon">
-                                        <i class="fas fa-code"></i>
-                                    </div>
-                                    <h3 class="seminars-card-title">IT Workshop</h3>
-                                    <p class="seminars-card-text">
-                                        Hands-on training in cutting-edge technologies
-                                        and software development practices.
-                                    </p>
-                                    <div class="seminars-card-meta">
-                                        <span><i class="fas fa-clock"></i> 5 Days</span>
-                                        <span><i class="fas fa-users"></i> 40+ Seats</span>
-                                        <span><i class="fas fa-certificate"></i> Certificate</span>
-                                    </div>
-                                    <a href="#" class="seminars-card-link">
-                                        Register Now <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="seminars-slide">
-                            <div class="seminars-card">
-                                <div class="seminars-card-image">
-                                    <img src="https://www.lpude.in/images/full/seminar-3.jpg" alt="Commerce Seminar"
-                                        loading="lazy" />
-                                    <div class="seminars-card-overlay">
-                                        <span class="seminars-card-badge">💰 Commerce</span>
-                                        <span class="seminars-card-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            Coming Soon
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="seminars-card-body">
-                                    <div class="seminars-card-icon">
-                                        <i class="fas fa-coins"></i>
-                                    </div>
-                                    <h3 class="seminars-card-title">Commerce Seminar</h3>
-                                    <p class="seminars-card-text">
-                                        Financial literacy, accounting practices, and
-                                        business economics for commerce professionals.
-                                    </p>
-                                    <div class="seminars-card-meta">
-                                        <span><i class="fas fa-clock"></i> 2 Days</span>
-                                        <span><i class="fas fa-users"></i> 60+ Seats</span>
-                                        <span><i class="fas fa-certificate"></i> Certificate</span>
-                                    </div>
-                                    <a href="#" class="seminars-card-link">
-                                        Register Now <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="seminars-slide">
-                            <div class="seminars-card">
-                                <div class="seminars-card-image">
-                                    <img src="https://www.lpude.in/images/full/seminar-4.jpg"
-                                        alt="Arts & Humanities Workshop" loading="lazy" />
-                                    <div class="seminars-card-overlay">
-                                        <span class="seminars-card-badge">🎨 Arts</span>
-                                        <span class="seminars-card-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            Coming Soon
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="seminars-card-body">
-                                    <div class="seminars-card-icon">
-                                        <i class="fas fa-palette"></i>
-                                    </div>
-                                    <h3 class="seminars-card-title">Arts & Humanities Workshop</h3>
-                                    <p class="seminars-card-text">
-                                        Creative expression, cultural studies, and
-                                        artistic development in humanities.
-                                    </p>
-                                    <div class="seminars-card-meta">
-                                        <span><i class="fas fa-clock"></i> 4 Days</span>
-                                        <span><i class="fas fa-users"></i> 30+ Seats</span>
-                                        <span><i class="fas fa-certificate"></i> Certificate</span>
-                                    </div>
-                                    <a href="#" class="seminars-card-link">
-                                        Register Now <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5 -->
-                        <div class="seminars-slide">
-                            <div class="seminars-card">
-                                <div class="seminars-card-image">
-                                    <img src="https://www.lpude.in/images/full/seminar-5.jpg"
-                                        alt="Library Science Seminar" loading="lazy" />
-                                    <div class="seminars-card-overlay">
-                                        <span class="seminars-card-badge">📚 Library Science</span>
-                                        <span class="seminars-card-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            Coming Soon
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="seminars-card-body">
-                                    <div class="seminars-card-icon">
-                                        <i class="fas fa-book"></i>
-                                    </div>
-                                    <h3 class="seminars-card-title">Library Science Seminar</h3>
-                                    <p class="seminars-card-text">
-                                        Modern library management, digital archiving,
-                                        and information science practices.
-                                    </p>
-                                    <div class="seminars-card-meta">
-                                        <span><i class="fas fa-clock"></i> 3 Days</span>
-                                        <span><i class="fas fa-users"></i> 35+ Seats</span>
-                                        <span><i class="fas fa-certificate"></i> Certificate</span>
-                                    </div>
-                                    <a href="#" class="seminars-card-link">
-                                        Register Now <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Navigation Buttons -->
-                <button class="seminars-nav seminars-nav-prev" id="seminarsPrev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="seminars-nav seminars-nav-next" id="seminarsNext">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-
-                <!-- Dots -->
-                <div class="seminars-dots" id="seminarsDots"></div>
-            </div>
-
-            <!-- View All -->
-            <div class="seminars-footer">
-                <a href="#" class="seminars-view-all">
-                    View All Workshops <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ============================================================
-   HALL OF FAME — Prominent Alumni
-   Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
-   ============================================================ -->
-
-    <section class="alumni-section">
-        <div class="alumni-container">
-            <!-- Section Header -->
-            <div class="alumni-header">
-                <span class="alumni-badge">
-                    <i class="fas fa-trophy"></i>
-                    Hall of Fame
-                </span>
-                <h2 class="alumni-title">
-                    Our <span>Prominent Alumni</span>
-                </h2>
-                <p class="alumni-subtitle">
-                    Celebrating the remarkable achievements of our distinguished graduates
-                </p>
-                <div class="alumni-divider">
-                    <span></span>
-                    <i class="fas fa-award"></i>
-                    <span></span>
-                </div>
-            </div>
-
-            <!-- Carousel Wrapper -->
-            <div class="alumni-carousel-wrapper">
-                <button class="alumni-nav alumni-nav-prev" id="alumniPrev" aria-label="Previous">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-
-                <div class="alumni-carousel" id="alumniCarousel">
-                    <div class="alumni-track" id="alumniTrack">
-                        <!-- Alumni Card 1 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/abhishek.jpg" alt="Abhishek Verma"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Arjuna Awardee</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Abhishek Verma</h3>
-                                <p class="alumni-card-program">MA (Psychology) — 2023</p>
-                                <p class="alumni-card-achievement">International Level Archer &amp; Arjuna Awardee</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 2 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/pooja.jpg" alt="Pooja" loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Para-Olympian</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Pooja</h3>
-                                <p class="alumni-card-program">MA (Psychology) — 2024</p>
-                                <p class="alumni-card-achievement">First Indian Para-Olympian Woman in Archery</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 3 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/jagdish.jpg" alt="Jagdish Singh"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Indian Army</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Jagdish Singh</h3>
-                                <p class="alumni-card-program">MBA — 2023</p>
-                                <p class="alumni-card-achievement">Lieutenant Colonel, Indian Army</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 4 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/vishwanath.jpg" alt="Vishwanath Yadav"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Banking</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Vishwanath Yadav</h3>
-                                <p class="alumni-card-program">MBA — 2023</p>
-                                <p class="alumni-card-achievement">Deputy General Manager, SBI</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 5 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/dr-rakesh-aggarwal.jpg"
-                                    alt="Dr. Rakesh Aggarwal" loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">IPS</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Dr. Rakesh Aggarwal</h3>
-                                <p class="alumni-card-program">MBA — 2014</p>
-                                <p class="alumni-card-achievement">Inspector General of Police, Punjab</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 6 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/dr-trundeep-kaur.jpg"
-                                    alt="Dr. Tarundeep Kaur" loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">IRS</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Dr. Tarundeep Kaur</h3>
-                                <p class="alumni-card-program">MBA — 2020</p>
-                                <p class="alumni-card-achievement">Additional Income Tax Commissioner</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 7 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/sukhmeet-singh.jpg" alt="Sukhmeet Singh"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Asian Games</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Sukhmeet Singh</h3>
-                                <p class="alumni-card-program">BA — 2019</p>
-                                <p class="alumni-card-achievement">International Rower &amp; Asian Games Gold Medalist
-                                </p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 8 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/anil-yadav.jpg" alt="Dr. Anil Kumar Yadav"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">RBI</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Dr. Anil Kumar Yadav</h3>
-                                <p class="alumni-card-program">MA Education — 2020</p>
-                                <p class="alumni-card-achievement">General Manager, Reserve Bank of India</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 9 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/vishal.jpg" alt="Vishal Kumar Dudeja"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Banking</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Vishal Kumar Dudeja</h3>
-                                <p class="alumni-card-program">MBA — 2023</p>
-                                <p class="alumni-card-achievement">Deputy Manager, SBI</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 10 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/vishal-gaurav.jpg" alt="Vishal Gaurav"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Finance</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Vishal Gaurav</h3>
-                                <p class="alumni-card-program">MA (English) — 2024</p>
-                                <p class="alumni-card-achievement">AVP, Capital Small Finance Bank</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 11 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame/sanjay.jpg" alt="Sanjay Chakraborty"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Corporate</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Sanjay Chakraborty</h3>
-                                <p class="alumni-card-program">MA (Economics) — 2024</p>
-                                <p class="alumni-card-achievement">Global Sales &amp; Marketing Director</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 12 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/fame1.jpg" alt="Dr. Sundar Srinivasan"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Corporate</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Dr. Sundar Srinivasan</h3>
-                                <p class="alumni-card-program">MBA — 2022</p>
-                                <p class="alumni-card-achievement">GM, Samsung Electronics (R&amp;D)</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 13 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/gurpreet-singh.jpg" alt="Gurpreet Singh"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Olympian</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Gurpreet Singh</h3>
-                                <p class="alumni-card-program">MBA — 2020</p>
-                                <p class="alumni-card-achievement">Olympian Shooter &amp; Arjuna Awardee</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 14 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/gurdev.jpg" alt="Gurdev Singh Mann"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Politics</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Gurdev Singh Mann</h3>
-                                <p class="alumni-card-program">BA — 2019</p>
-                                <p class="alumni-card-achievement">MLA, Nabha, Punjab</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 15 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/lakshmi-sharma.jpg" alt="Lakshmi Sharma"
-                                    loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">Government</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Lakshmi Sharma</h3>
-                                <p class="alumni-card-program">BA — 2020</p>
-                                <p class="alumni-card-achievement">Treasury Officer, Govt of Punjab</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alumni Card 16 -->
-                        <div class="alumni-card">
-                            <div class="alumni-card-image">
-                                <img src="https://www.lpuonline.com/images/pushpender-gangwar.jpg"
-                                    alt="Pushpender Gangwar" loading="lazy">
-                                <div class="alumni-card-overlay">
-                                    <span class="alumni-card-badge">BSF</span>
-                                </div>
-                            </div>
-                            <div class="alumni-card-body">
-                                <h3 class="alumni-card-name">Pushpender Gangwar</h3>
-                                <p class="alumni-card-program">MSc. IT — 2020</p>
-                                <p class="alumni-card-achievement">Deputy Commandant, BSF</p>
-                                <div class="alumni-card-icon">
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="alumni-nav alumni-nav-next" id="alumniNext" aria-label="Next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-
-            <!-- Dots Indicator -->
-            <div class="alumni-dots" id="alumniDots"></div>
-
-            <!-- View All Button -->
-            <div class="alumni-footer">
-                <a href="#" class="alumni-btn-primary">
-                    <i class="fas fa-users"></i>
-                    View All Alumni
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#" class="alumni-btn-secondary">
-                    <i class="fas fa-download"></i>
-                    Download List
-                </a>
+        <!-- FAQ List -->
+        <div id="faqContainer">
+            <div class="faq-premium-list" id="faqList"></div>
+            <div class="faq-premium-no-results" id="noFaq">
+                <span class="no-results-icon">🔍</span>
+                <h3>No FAQs Found</h3>
+                <p>Try adjusting your search or filter.</p>
             </div>
         </div>
-    </section>
-    <!-- ============================================================
-   FAQ SECTION — LPU Distance Education 2026
-   Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
-   ============================================================ -->
+        
+    </div>
+</section>
 
-    <section class="faq-section" id="faq">
-        <div class="faq-container">
-            <!-- Section Header -->
-            <div class="faq-header">
-                <span class="faq-badge">
-                    <i class="fas fa-question-circle"></i>
-                    Got Questions?
-                </span>
-                <h2 class="faq-title">
-                    Frequently Asked <span>Questions</span>
-                </h2>
-                <p class="faq-subtitle">
-                    Everything you need to know about LPU Distance Education in Punjab
-                </p>
-                <div class="faq-divider">
-                    <span></span>
-                    <i class="fas fa-comments"></i>
-                    <span></span>
-                </div>
-            </div>
 
-            <!-- FAQ List -->
-            <div class="faq-list">
-                <!-- FAQ 1 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </span>
-                        <span class="faq-question-text">Is LPU Distance Education available in Punjab?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, LPU Distance Education programs are fully available across Punjab through our authorized
-                            admission center. Students from Jalandhar, Ludhiana, Amritsar, Patiala, and surrounding
-                            areas can enroll in all UGC-DEB approved programs including MBA, MCA, BBA, BCA, B.Com,
-                            M.Com, and more.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-rupee-sign"></i>
-                        </span>
-                        <span class="faq-question-text">What is the fee for LPU Distance MBA in Punjab?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>The LPU Distance MBA fee is ₹16,500 per semester, totaling ₹66,000 for the complete 2-year
-                            program (4 semesters). This makes it one of the most affordable MBA programs available in
-                            Punjab.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-building-columns"></i>
-                        </span>
-                        <span class="faq-question-text">Is LPU Distance Education degree valid for government
-                            jobs?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, all LPU Distance Education degrees are approved by UGC-DEB (University Grants Commission
-                            — Distance Education Bureau) and are valid for government jobs, higher education,
-                            promotions, and all official purposes across India.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </span>
-                        <span class="faq-question-text">What programs are offered by LPU Distance Education in
-                            Punjab?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>LPU Distance Education in Punjab offers 23+ programs: MBA (12 specializations), MCA (5
-                            specializations), M.Com, M.Sc. IT, MA (English, Hindi, History, Punjabi, Sociology,
-                            Education, Economics, Political Science, Mathematics), MLIS, BBA, BCA, B.Com, B.Sc. IT, BA,
-                            BLIS, DBA, DCA, and DLIS.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-file-pen"></i>
-                        </span>
-                        <span class="faq-question-text">How to apply for LPU Distance Education from Punjab?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Applying from Punjab is simple: Fill the application form online or visit our center at
-                            Jalandhar-Delhi GT Road, Phagwara, submit your documents (marksheets, ID proof, photos), pay
-                            the semester fee, and receive your admission confirmation. We offer free counseling to help
-                            you choose the right program.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </span>
-                        <span class="faq-question-text">What is the eligibility for LPU Distance Education?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Eligibility varies by program: PG programs (MBA, MCA, M.Com, MA) require graduation. UG
-                            programs (BBA, BCA, B.Com, BA) require 10+2. Diploma programs (DBA, DCA, DLIS) require 10+2.
-                            Contact us for specific program eligibility details.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 7 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </span>
-                        <span class="faq-question-text">Does LPU Distance Education provide placement assistance in
-                            Punjab?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, LPU provides placement assistance to all distance education students. With 2225+
-                            recruiters and 6000+ Fortune 500 offers, LPU has a strong placement record. Students from
-                            Punjab can access the same placement support.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 8 -->
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="faq-question-icon">
-                            <i class="fas fa-location-dot"></i>
-                        </span>
-                        <span class="faq-question-text">Where is the LPU Distance Education center in Punjab?</span>
-                        <span class="faq-question-arrow">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Our admission center is located at Jalandhar-Delhi GT Road, Phagwara, Punjab 144411. We serve
-                            students from Jalandhar, Ludhiana, Amritsar, Patiala, and all across Punjab with complete
-                            admission assistance and free counseling.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View All FAQs -->
-            <div class="faq-footer">
-                <a href="#" class="faq-btn-primary">
-                    <i class="fas fa-book-open"></i>
-                    Read All 55+ FAQs
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#" class="faq-btn-secondary">
-                    <i class="fas fa-headset"></i>
-                    Ask Your Question
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- ============================================================
-   WHY CHOOSE LPU — LPU Distance Education 2026
-   Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
-   ============================================================ -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -2125,6 +845,225 @@
             offset: 100
         });
     </script>
+
+    <script>
+    // ---------- DATA ----------
+   // ---------- PREMIUM ENGLISH FAQ DATA ----------
+const faqData = [
+    // ===== GENERAL INFORMATION =====
+    { category: "General Information", q: "Where is Lovely Professional University (LPU) located?", a: "LPU is located on the Jalandhar-Delhi GT Road, Phagwara, Punjab, India - 144411." },
+    { category: "General Information", q: "What is the full form of LPU?", a: "LPU stands for Lovely Professional University, one of India's largest private universities." },
+    { category: "General Information", q: "When was LPU established?", a: "LPU was established in 2005 under the Punjab State Legislature Act." },
+    { category: "General Information", q: "How large is the LPU campus?", a: "LPU boasts a sprawling 600+ acre fully residential campus." },
+    { category: "General Information", q: "How many students are currently enrolled at LPU?", a: "LPU has over 30,000+ students from all across India and 50+ countries." },
+    { category: "General Information", q: "Is LPU UGC approved?", a: "Yes, LPU is fully approved by the University Grants Commission (UGC) and recognized by the Government of India." },
+    { category: "General Information", q: "Does LPU have international students?", a: "Yes, LPU has a diverse student body with students from over 50 countries worldwide." },
+    { category: "General Information", q: "How strong is the LPU alumni network?", a: "LPU has a robust global alumni network spanning 100+ countries with successful professionals across industries." },
+
+    // ===== PROGRAMS & COURSES =====
+    { category: "Programs & Courses", q: "Does LPU offer B.Tech programs?", a: "Yes, LPU offers B.Tech programs in multiple specializations including CSE, ME, ECE, Civil, and more." },
+    { category: "Programs & Courses", q: "Is MBA available at LPU?", a: "Yes, LPU offers a comprehensive MBA program with dual specialization options." },
+    { category: "Programs & Courses", q: "Does LPU offer BCA and MCA programs?", a: "Yes, both BCA (Bachelor of Computer Applications) and MCA are available." },
+    { category: "Programs & Courses", q: "Is there an LLB program at LPU?", a: "Yes, LPU offers both 3-year and 5-year integrated LLB programs." },
+    { category: "Programs & Courses", q: "Does LPU have design courses?", a: "Yes, LPU offers B.Des, M.Des, and other design programs across multiple specializations." },
+    { category: "Programs & Courses", q: "Are there agriculture courses at LPU?", a: "Yes, LPU offers B.Sc Agriculture and related programs." },
+    { category: "Programs & Courses", q: "Does LPU offer Hotel Management courses?", a: "Yes, LPU offers B.Sc HMCT (Hotel Management & Catering Technology)." },
+    { category: "Programs & Courses", q: "Is Pharmacy available at LPU?", a: "Yes, LPU offers both B.Pharm and M.Pharm programs." },
+    { category: "Programs & Courses", q: "Does LPU offer PhD programs?", a: "Yes, LPU offers doctoral programs across multiple disciplines." },
+    { category: "Programs & Courses", q: "Does LPU have online/distance learning courses?", a: "Yes, LPU offers both distance learning and online degree programs." },
+
+    // ===== ELIGIBILITY & ADMISSION =====
+    { category: "Eligibility & Admission", q: "What is the minimum percentage required for B.Tech admission?", a: "A minimum of 60% in 12th with Physics, Chemistry & Mathematics (PCM) is required." },
+    { category: "Eligibility & Admission", q: "What percentage is required for MBA admission?", a: "A minimum of 50% in graduation from a recognized university is required." },
+    { category: "Eligibility & Admission", q: "Does LPU conduct its own entrance exam?", a: "Yes, LPU conducts the LPUNEST (LPU National Entrance & Scholarship Test) for admissions." },
+    { category: "Eligibility & Admission", q: "Can students with compartment in 12th apply?", a: "Yes, students with compartment can apply but need to clear it before admission." },
+    { category: "Eligibility & Admission", q: "Is direct admission possible at LPU?", a: "Yes, LPU offers direct admission based on merit/previous academic performance." },
+    { category: "Eligibility & Admission", q: "What is the admission process for international students?", a: "International students need a valid student visa and equivalence certificate from AIU." },
+    { category: "Eligibility & Admission", q: "When is LPUNEST conducted?", a: "LPUNEST is typically conducted between January to March every year." },
+    { category: "Eligibility & Admission", q: "Does LPU offer diploma courses after 10th?", a: "Yes, LPU offers various polytechnic diploma programs after 10th." },
+    { category: "Eligibility & Admission", q: "Is migration certificate mandatory for LPU?", a: "Yes, the original migration certificate from the previous university is mandatory." },
+    { category: "Eligibility & Admission", q: "Is online application mandatory for LPU admission?", a: "Yes, all admissions must be submitted through the official LPU online portal." },
+
+    // ===== FEES & PAYMENT =====
+    { category: "Fees & Payment", q: "What is the annual fee for B.Tech programs?", a: "The B.Tech fee is approximately ₹1.2 lakh per year (scholarships can reduce this)." },
+    { category: "Fees & Payment", q: "What is the fee structure for MBA?", a: "The MBA program fee is approximately ₹2.4 lakh per year." },
+    { category: "Fees & Payment", q: "Does LPU offer scholarships?", a: "Yes, LPU offers scholarships based on LPUNEST performance and merit." },
+    { category: "Fees & Payment", q: "Can fees be paid in installments?", a: "Yes, fees can be paid per semester with flexible installment options." },
+    { category: "Fees & Payment", q: "Are hostel fees separate?", a: "Yes, hostel fees range from ₹70,000 to ₹1.2 lakh per year depending on room type." },
+    { category: "Fees & Payment", q: "Is there a late fee penalty?", a: "Yes, late fees apply after the specified deadline." },
+    { category: "Fees & Payment", q: "Does LPU have education loan tie-ups?", a: "Yes, LPU has tie-ups with leading banks for education loans." },
+    { category: "Fees & Payment", q: "Is there a fee refund policy?", a: "Yes, LPU follows the UGC fee refund guidelines." },
+
+    // ===== STUDY MATERIAL & EXAMINATIONS =====
+    { category: "Study Material & Examinations", q: "Is study material available online?", a: "Yes, all study materials are available on the LPU LMS (Learning Management System)." },
+    { category: "Study Material & Examinations", q: "When are exams conducted?", a: "Exams are conducted at the end of each semester." },
+    { category: "Study Material & Examinations", q: "Are there online examinations?", a: "Yes, some subjects have online exam options as well." },
+    { category: "Study Material & Examinations", q: "Is there a provision for back papers?", a: "Yes, supplementary exams are available for back papers." },
+    { category: "Study Material & Examinations", q: "Is attendance compulsory?", a: "Yes, a minimum of 75% attendance is mandatory." },
+    { category: "Study Material & Examinations", q: "Are previous year papers available?", a: "Yes, previous year papers are available in the library and LMS." },
+    { category: "Study Material & Examinations", q: "Is project submission required?", a: "Yes, project submission is mandatory every semester." },
+    { category: "Study Material & Examinations", q: "Do assignments add to the final marks?", a: "Yes, assignments contribute to the internal assessment." },
+
+    // ===== PERSONAL CONTACT PROGRAMME (PCP) =====
+    { category: "Personal Contact Programme (PCP)", q: "What is PCP (Personal Contact Programme)?", a: "PCP is a weekend classroom program for distance learners to get face-to-face guidance." },
+    { category: "Personal Contact Programme (PCP)", q: "How long are PCP sessions?", a: "PCP sessions are usually 2-3 days per month." },
+    { category: "Personal Contact Programme (PCP)", q: "Is PCP attendance mandatory?", a: "Yes, a minimum of 60% attendance in PCP is required." },
+    { category: "Personal Contact Programme (PCP)", q: "Are PCP sessions available online?", a: "Yes, LPU offers both online and hybrid PCP modes." },
+
+    // ===== PLACEMENTS & CAREER =====
+    { category: "Placements & Career", q: "How are placements at LPU?", a: "LPU has excellent placement records with 1000+ companies visiting campus annually." },
+    { category: "Placements & Career", q: "What is the highest package offered?", a: "The highest package offered is 64 LPA (International)." },
+    { category: "Placements & Career", q: "What is the average placement package?", a: "The average package ranges between 6-8 LPA." },
+    { category: "Placements & Career", q: "Is internship mandatory?", a: "Yes, summer internship is mandatory for all students." },
+    { category: "Placements & Career", q: "Does LPU provide placement training?", a: "Yes, the CDC (Career Development Cell) provides comprehensive training." },
+
+    // ===== DEGREE & CERTIFICATES =====
+    { category: "Degree & Certificates", q: "Is LPU degree UGC approved?", a: "Yes, LPU degrees are fully valid and UGC approved." },
+    { category: "Degree & Certificates", q: "Is LPU degree WES approved?", a: "Yes, LPU degrees are WES approved for international recognition." },
+    { category: "Degree & Certificates", q: "Is provisional degree provided?", a: "Yes, a provisional degree is provided after result declaration." },
+    { category: "Degree & Certificates", q: "Can duplicate degree be obtained?", a: "Yes, duplicate degree can be obtained by applying to the examination department." },
+    { category: "Degree & Certificates", q: "Can LPU degree be verified online?", a: "Yes, LPU degrees can be verified online through the official website." },
+
+    // ===== TECHNICAL & STUDENT SUPPORT =====
+    { category: "Technical & Student Support", q: "Does LPU provide 24x7 support?", a: "Yes, LPU offers 24x7 IT and student helpline support." },
+    { category: "Technical & Student Support", q: "Is Wi-Fi available on campus?", a: "Yes, the entire campus is Wi-Fi enabled." },
+    { category: "Technical & Student Support", q: "Is the library open 24x7?", a: "Yes, the central library is open 24x7 for students." },
+    { category: "Technical & Student Support", q: "Does LPU have a health center?", a: "Yes, LPU has a full-fledged hospital on campus." },
+    { category: "Technical & Student Support", q: "Are sports facilities available?", a: "Yes, LPU has Olympic-level sports facilities." },
+    { category: "Technical & Student Support", q: "Does hostel have a mess facility?", a: "Yes, both vegetarian and non-veg mess options are available." },
+
+    // ===== COMPARISON & RECOGNITION =====
+    { category: "Comparison & Recognition", q: "LPU vs Amity - which is better?", a: "Both are good universities. LPU offers a larger campus and more affordable fees." },
+    { category: "Comparison & Recognition", q: "LPU vs Chandigarh University?", a: "LPU is older with a stronger established brand reputation." },
+    { category: "Comparison & Recognition", q: "What is LPU's NAAC grade?", a: "LPU is accredited with NAAC A++ Grade." },
+    { category: "Comparison & Recognition", q: "What is LPU's NIRF ranking?", a: "LPU is ranked among the top 100 universities in India by NIRF." },
+
+    // ===== PUNJAB DISTRICT-SPECIFIC =====
+    { category: "Punjab District-Specific", q: "How far is LPU from Jalandhar?", a: "LPU is approximately 15 km from Jalandhar city." },
+    { category: "Punjab District-Specific", q: "Distance from Amritsar to LPU?", a: "LPU is approximately 90 km from Amritsar." },
+    { category: "Punjab District-Specific", q: "How far is Ludhiana from LPU?", a: "LPU is approximately 50 km from Ludhiana." },
+    { category: "Punjab District-Specific", q: "Distance from Patiala to LPU?", a: "LPU is approximately 130 km from Patiala." },
+    { category: "Punjab District-Specific", q: "Distance from Bathinda to LPU?", a: "LPU is approximately 200 km from Bathinda." },
+
+    // ===== LPU VS OTHER UNIVERSITIES =====
+    { category: "LPU vs Other Universities", q: "LPU vs DU - which is better?", a: "DU has a government brand value while LPU offers better infrastructure and facilities." },
+    { category: "LPU vs Other Universities", q: "LPU vs VIT - comparison?", a: "Both are top private universities; VIT is stronger in South India." },
+    { category: "LPU vs Other Universities", q: "LPU vs BITS Pilani?", a: "BITS Pilani is a premier institute but LPU is more affordable with great infrastructure." }
+];
+   const categoryBtns = document.getElementById('categoryBtns');
+const faqList = document.getElementById('faqList');
+const noFaq = document.getElementById('noFaq');
+const searchInput = document.getElementById('faqSearchInput');
+
+let currentCategory = 'All';
+let searchTerm = '';
+
+// Get unique categories with count
+function getCategories() {
+    const map = new Map();
+    faqData.forEach(item => {
+        map.set(item.category, (map.get(item.category) || 0) + 1);
+    });
+    return map;
+}
+
+// Render buttons
+function renderButtons() {
+    const catMap = getCategories();
+    let html = `<button class="cat-btn active" data-category="All">All <span class="cat-count">${faqData.length}</span></button>`;
+    for (let [cat, count] of catMap) {
+        html += `<button class="cat-btn" data-category="${cat}">${cat} <span class="cat-count">${count}</span></button>`;
+    }
+    categoryBtns.innerHTML = html;
+
+    // Event listeners
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentCategory = this.dataset.category;
+            renderFaqs();
+        });
+    });
+}
+
+// Render FAQs
+function renderFaqs() {
+    let filtered = faqData;
+    
+    // Filter by category
+    if (currentCategory !== 'All') {
+        filtered = filtered.filter(item => item.category === currentCategory);
+    }
+    
+    // Filter by search
+    if (searchTerm.trim() !== '') {
+        const term = searchTerm.toLowerCase().trim();
+        filtered = filtered.filter(item => 
+            item.q.toLowerCase().includes(term) || 
+            item.a.toLowerCase().includes(term)
+        );
+    }
+
+    if (filtered.length === 0) {
+        faqList.innerHTML = '';
+        noFaq.classList.add('show');
+        document.getElementById('faqTotalCount').textContent = '0';
+        return;
+    } else {
+        noFaq.classList.remove('show');
+        document.getElementById('faqTotalCount').textContent = filtered.length;
+    }
+
+    let html = '';
+    filtered.forEach((item, index) => {
+        html += `
+            <div class="faq-premium-item visible" data-index="${index}">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span class="q-icon">Q</span>
+                    <span class="q-text">${item.q}</span>
+                    <span class="q-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </div>
+                <div class="faq-answer">
+                    <span class="a-icon">✅</span> ${item.a}
+                </div>
+            </div>
+        `;
+    });
+    faqList.innerHTML = html;
+}
+
+// Toggle answer
+function toggleAnswer(element) {
+    const answer = element.nextElementSibling;
+    const toggle = element.querySelector('.q-toggle i');
+    
+    if (answer.classList.contains('open')) {
+        answer.classList.remove('open');
+        toggle.className = 'fas fa-chevron-down';
+    } else {
+        // Close all other answers
+        document.querySelectorAll('.faq-answer.open').forEach(el => {
+            el.classList.remove('open');
+            el.previousElementSibling.querySelector('.q-toggle i').className = 'fas fa-chevron-down';
+        });
+        answer.classList.add('open');
+        toggle.className = 'fas fa-chevron-up';
+    }
+}
+
+// Search functionality
+searchInput.addEventListener('input', function() {
+    searchTerm = this.value;
+    renderFaqs();
+});
+
+// Init
+renderButtons();
+renderFaqs();
+</script>
 
 </body>
 
