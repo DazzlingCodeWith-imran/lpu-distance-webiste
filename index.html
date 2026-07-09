@@ -54,27 +54,31 @@
 
 <style>
     /* Main Content Box */
-.why-content{
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 40px;
+    .why-content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
 
-    background: #ffffff;              /* White Box */
-    border: 1px solid #e8e8e8;        /* Light Border */
-    border-radius: 24px;              /* Rounded Corners */
-    padding: 40px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
-}
-
-/* Mobile */
-@media (max-width:768px){
-    .why-content{
-        grid-template-columns:1fr;
-        padding:24px;
-        border-radius:20px;
+        background: #ffffff;
+        /* White Box */
+        border: 1px solid #e8e8e8;
+        /* Light Border */
+        border-radius: 24px;
+        /* Rounded Corners */
+        padding: 40px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
     }
-}
+
+    /* Mobile */
+    @media (max-width:768px) {
+        .why-content {
+            grid-template-columns: 1fr;
+            padding: 24px;
+            border-radius: 20px;
+        }
+    }
 </style>
+
 <body>
     <div id="preloader">
         <div class="spinner"></div>
@@ -99,24 +103,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle active"
-       href="/index.html"
-       id="homeDropdown"
-       role="button"
-       data-bs-toggle="dropdown"
-       aria-expanded="false">
-        Home
-    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="/index.html" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
 
-    <ul class="dropdown-menu shadow border-0 rounded-3">
-        <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
-        <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a></li>
-        <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
-        <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
-    <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
-    </ul>
-</li>
+                        <ul class="dropdown-menu shadow border-0 rounded-3">
+                            <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
+                            <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
+                            <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
+                            <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
                     <li class="nav-item"><a class="nav-link" href="universities.html">Universities</a></li>
@@ -303,7 +304,7 @@
                             Apply Now
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="#" class="why-btn-secondary">
+                        <a href="tel:+919316200006" class="why-btn-secondary">
                             <i class="fas fa-phone"></i>
                             Get Free Counseling
                         </a>
@@ -582,10 +583,10 @@
                 Get free counseling on the best LPU Distance Education program for your career goals —
                 perfect for working professionals across India.
             </p>
-            <button class="lpu-cta-btn" type="button">
+            <a href="tel:+919569520100" class="lpu-cta-btn">
                 <span class="lpu-cta-btn-icon">📞</span>
                 Request Call Back
-            </button>
+            </a>
         </div>
     </section>
     <!-- ============================================================
@@ -1267,8 +1268,8 @@
             <div class="experience-footer">
                 <div class="experience-cta">
                     <span class="cta-text">Ready to start your journey?</span>
-                    <a href="#" class="cta-button">
-                        Join LPUDE Now <i class="fas fa-arrow-right"></i>
+                    <a href="tel:+919569520100" class="cta-button">
+                        📞 Get Free Counselling <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
