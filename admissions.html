@@ -31,84 +31,143 @@
   <div class="scroll-progress-bar"></div>
 
   <!-- Navbar -->
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"
-                style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+ <nav class="navbar navbar-expand-xl sticky-top custom-navbar">
+    <div class="container-fluid px-lg-5 px-3">
 
-                <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png" alt="LPU Logo" class="logo-main"
-                    style="height:50px; width:auto; object-fit:contain;">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
 
-                <img src="https://www.lpude.in/images/naac-logo.webp" alt="NAAC Logo" class="logo-naac"
-                    style="height:50px; width:auto; margin-right: 40px;">
+            <img src="/src/assets/Logo/NavLOGO/images.png"
+                class="logo-main"
+                alt="LPU Logo">
 
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="/index.html" id="homeDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About
-                        </a>
+            <img src="https://www.lpude.in/images/naac-logo.webp"
+                class="logo-naac"
+                alt="NAAC Logo">
 
-                        <ul class="dropdown-menu shadow border-0 rounded-3">
-                            <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
-                            <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a>
-                            </li>
-                            <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
-                            <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
-                            <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
-                        </ul>
-                    </li>
-                      <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Courses
-            </a>
+        </a>
 
-            <ul class="dropdown-menu shadow border-0 rounded-3" aria-labelledby="coursesDropdown">
-              <li>
-                <a class="dropdown-item" href="courses.html">
-                  Distance Education
-                </a>
-              </li>
+        <!-- Mobile Toggle -->
 
-              <li>
-               <a class="dropdown-item" href="/onlineEduction.html">
-                  Online Education
-                </a>
-              </li>
+        <button class="navbar-toggler shadow-none border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+            id="navbarNav">
+
+            <ul class="navbar-nav align-items-xl-center ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <!-- About -->
+
+           <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle"
+       id="homeDropdown"
+       href="/about.html"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+        About
+    </a>
+
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
+        <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
+    </ul>
+</li>
+
+                <!-- Courses -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                        href="/courses.html"
+                        data-bs-toggle="dropdown">
+
+                        Courses
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="courses.html">
+
+                                Distance Education
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="onlineEduction.html">
+
+                                Online Education
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="universities.html">Universities</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="admissions.html">Admissions</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="placement.html">Placement</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Faq.html">FAQ</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item ms-xl-3 mt-3 mt-xl-0">
+
+                    <button class="apply-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#applyModal">
+
+                        <i class="fas fa-graduation-cap"></i>
+
+                        Apply Now
+
+                    </button>
+
+                </li>
+
             </ul>
-          </li>
-                    <li class="nav-item"><a class="nav-link" href="universities.html">Universities</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Faq.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="btn-premium" data-bs-toggle="modal" data-bs-target="#applyModal" style="background: linear-gradient(135deg, #FF6B00, #FF8C00); 
-               color: white; 
-               border: none; 
-               padding: 12px 30px; 
-               border-radius: 50px; 
-               font-weight: 700;
-               font-size: 16px;
-               transition: all 0.3s;
-               box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
-               cursor: pointer;">
-                            <i class="fas fa-graduation-cap"></i> Apply Now
-                        </button>
-                    </li>
-                </ul>
-            </div>
+
         </div>
-    </nav>
+
+    </div>
+</nav>
 <!-- ============================================================
    ADMISSION BANNER — LPU Distance Education 2026
    Colors: Orange (#F97316), Light Gray (#F1F5F9), White (#FFFFFF)
@@ -761,7 +820,7 @@
 
 
 </a>
-          <p>Premium distance education admission platform helping students find accredited programs worldwide.</p>
+          <p style="color: white;">Premium distance education admission platform helping students find accredited programs worldwide.</p>
         </div>
         <div class="col-lg-2 mb-4">
           <h5>Quick Links</h5>

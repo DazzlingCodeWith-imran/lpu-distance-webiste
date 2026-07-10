@@ -14,7 +14,7 @@
   .hero-shell{
     position:relative;
     width:100%;
-   margin-top: 80px;
+   
     min-height:640px;
     overflow:hidden;
     isolation:isolate;

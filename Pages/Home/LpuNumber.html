@@ -50,6 +50,7 @@
     <link rel="stylesheet" href="/src/assets/Home/FAQSections.css">
     <link rel="stylesheet" href="/src/assets/Home/WhyChooseLPU.css">
     <link rel="stylesheet" href="/src/assets/Navbar/DropDown.css">
+    <link rel="stylesheet" href="/src/ApplyNow.css">
 </head>
 
 <body>
@@ -59,55 +60,143 @@
     <div class="scroll-progress-bar"></div>
 
     <!-- Navbar -->
-    <!-- Navbar -->
-   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-<a class="navbar-brand" href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+ <nav class="navbar navbar-expand-xl sticky-top custom-navbar">
+    <div class="container-fluid px-lg-5 px-3">
 
-    <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png"
-         alt="LPU Logo"
-         class="logo-main"
-         style="height:50px; width:auto; object-fit:contain;">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
 
-    <img src="https://www.lpude.in/images/naac-logo.webp"
-         alt="NAAC Logo"
-         class="logo-naac"
-         style="height:50px; width:auto; margin-right: 40px;">
+            <img src="/src/assets/Logo/NavLOGO/images.png"
+                class="logo-main"
+                alt="LPU Logo">
 
-</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
- <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="/index.html" id="homeDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About
-                        </a>
+            <img src="https://www.lpude.in/images/naac-logo.webp"
+                class="logo-naac"
+                alt="NAAC Logo">
 
-                        <ul class="dropdown-menu shadow border-0 rounded-3">
-                            <li><a class="dropdown-item" href="/Pages/Home/Announcements.html">Announcements</a></li>
-                            <li><a class="dropdown-item" href="/Pages/Home/rankings.html">Rankings & Recognition</a>
-                            </li>
-                            <li><a class="dropdown-item" href="/Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
-                            <li><a class="dropdown-item" href="/Pages/Home/degree.html">Your Dream Degree</a></li>
-                            <li><a class="dropdown-item" href="/Pages/Home/toppers.html">Top Performers</a></li>
-                        </ul>
-                    </li>
-          <li class="nav-item"><a class="nav-link" href="/courses.html">Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="/universities.html">Universities</a></li>
-          <li class="nav-item"><a class="nav-link" href="/admissions.html">Admissions</a></li>
-          <li class="nav-item"><a class="nav-link" href="/placement.html">Placement</a></li>
-          <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn-premium" href="/admissions.html">Apply Now</a></li>
-        </ul>
-      </div>
+        </a>
+
+        <!-- Mobile Toggle -->
+
+        <button class="navbar-toggler shadow-none border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end"
+            id="navbarNav">
+
+            <ul class="navbar-nav align-items-xl-center ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Home</a>
+                </li>
+
+                <!-- About -->
+
+           <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle"
+       id="homeDropdown"
+       href="/about.html"
+       role="button"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+        About
+    </a>
+
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/Pages/Home/Announcements.html">Announcements</a></li>
+        <li><a class="dropdown-item" href="/Pages/Home/rankings.html">Rankings & Recognition</a></li>
+        <li><a class="dropdown-item" href="/Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
+        <li><a class="dropdown-item" href="/Pages/Home/degree.html">Your Dream Degree</a></li>
+        <li><a class="dropdown-item" href="/Pages/Home/toppers.html">Top Performers</a></li>
+    </ul>
+</li>
+
+                <!-- Courses -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"
+                        href="/courses.html"
+                        data-bs-toggle="dropdown">
+
+                        Courses
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="/courses.html">
+
+                                Distance Education
+
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="/onlineEduction.html">
+
+                                Online Education
+
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="universities.html">Universities</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admissions.html">Admissions</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/placement.html">Placement</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Faq.html">FAQ</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact</a>
+                </li>
+
+                <li class="nav-item ms-xl-3 mt-3 mt-xl-0">
+
+                    <button class="apply-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#applyModal">
+
+                        <i class="fas fa-graduation-cap"></i>
+
+                        Apply Now
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </div>
+
     </div>
-  </nav>
+</nav>
 
     <!-- Hero Section with 8 Working Images -->
     <section class="hero-shell" aria-label="LPU Distance Education hero banner">
@@ -959,6 +1048,178 @@
             offset: 100
         });
     </script>
+     <!-- Apply Now Modal -->
+    <section>
+        <!-- Apply Now Modal - Premium Version -->
+        <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Header -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="applyModalLabel">
+                            <i class="fas fa-graduation-cap"></i>
+                            Start Your Journey With LPU
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body">
+                        <!-- Success Message -->
+                        <div id="successMessage" style="display: none;">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>🎉 Application Submitted!</h3>
+                            <p>Our admission counselor will contact you within 24 hours.</p>
+                            <p style="font-size: 14px; color: #999; margin-top: 15px;">
+                                <i class="fas fa-phone"></i> For urgent queries: +91-1234567890
+                            </p>
+                        </div>
+
+                        <!-- Form -->
+                        <form id="applicationForm">
+                            <div class="row g-4">
+                                <!-- Full Name -->
+                                <div class="col-md-6 form-shimmer">
+                                    <label class="form-label">
+                                        <i class="fas fa-user"></i> Full Name
+                                        <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-user input-icon"></i>
+                                        <input type="text" class="form-control" id="fullName"
+                                            placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter your full name</div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-md-6 form-shimmer">
+                                    <label class="form-label">
+                                        <i class="fas fa-envelope"></i> Email Address
+                                        <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-envelope input-icon"></i>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Enter your email" required>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter a valid email</div>
+                                </div>
+
+                                <!-- Mobile -->
+                                <div class="col-md-6 form-shimmer">
+                                    <label class="form-label">
+                                        <i class="fas fa-phone"></i> Mobile Number
+                                        <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-phone input-icon"></i>
+                                        <input type="tel" class="form-control" id="mobile"
+                                            placeholder="10-digit mobile number" required maxlength="10">
+                                    </div>
+                                    <div class="invalid-feedback">Enter a valid 10-digit mobile number</div>
+                                </div>
+
+                                <!-- City -->
+                                <div class="col-md-6 form-shimmer">
+                                    <label class="form-label">
+                                        <i class="fas fa-city"></i> City
+                                    </label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-map-marker-alt input-icon"></i>
+                                        <input type="text" class="form-control" id="city" placeholder="Enter your city">
+                                    </div>
+                                </div>
+
+                                <!-- Course (All your courses) -->
+                                <div class="col-md-6 form-shimmer">
+                                    <label class="form-label">
+                                        <i class="fas fa-book-open"></i> Course Interest
+                                        <span class="required-star">*</span>
+                                    </label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-graduation-cap input-icon"></i>
+                                        <select class="form-select" id="course" required>
+                                            <option value="">Select a course</option>
+                                            <option value="mba">MBA — Master of Business Administration</option>
+                                            <option value="mca">MCA — Master of Computer Applications</option>
+                                            <option value="mcom">M.Com — Master of Commerce</option>
+                                            <option value="msc-it">M.Sc. IT — M.Sc. Information Technology</option>
+                                            <option value="ma-english">MA English — M.A. English</option>
+                                            <option value="ma-history">MA History — M.A. History</option>
+                                            <option value="ma-hindi">MA Hindi — M.A. Hindi</option>
+                                            <option value="ma-punjabi">MA Punjabi — M.A. Punjabi</option>
+                                            <option value="ma-polsci">MA Pol. Sci. — M.A. Political Science</option>
+                                            <option value="ma-mathematics">MA Maths — M.A. Mathematics</option>
+                                            <option value="ma-sociology">MA Sociology — M.A. Sociology</option>
+                                            <option value="ma-education">MA Education — M.A. Education</option>
+                                            <option value="ma-economics">MA Economics — M.A. Economics</option>
+                                            <option value="mlis">MLIS — Master of Library &amp; Information Science
+                                            </option>
+                                            <option value="bba">BBA — Bachelor of Business Administration</option>
+                                            <option value="bca">BCA — Bachelor of Computer Applications</option>
+                                            <option value="bcom">B.Com — Bachelor of Commerce</option>
+                                            <option value="bsc-it">B.Sc. IT — B.Sc. Information Technology</option>
+                                            <option value="ba">BA — Bachelor of Arts</option>
+                                            <option value="blis">BLIS — Bachelor of Library &amp; Information Science
+                                            </option>
+                                            <option value="dba">DBA — Diploma in Business Administration</option>
+                                            <option value="dca">DCA — Diploma in Computer Applications</option>
+                                            <option value="dlis">DLIS — Diploma in Library &amp; Information Science
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="invalid-feedback">Please select a course</div>
+                                </div>
+
+                                <!-- Qualification -->
+                                <div class="col-md-6 form-shimmer">
+                                    <label class="form-label">
+                                        <i class="fas fa-trophy"></i> Highest Qualification
+                                    </label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-certificate input-icon"></i>
+                                        <select class="form-select" id="qualification">
+                                            <option value="">Select qualification</option>
+                                            <option value="10th">10th Pass</option>
+                                            <option value="12th">12th Pass</option>
+                                            <option value="graduate">Graduate</option>
+                                            <option value="post-graduate">Post Graduate</option>
+                                            <option value="phd">PhD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Error Message -->
+                            <div id="formError" class="alert alert-danger mt-4"
+                                style="display: none; border-radius: 12px;"></div>
+
+                            <!-- Submit Button -->
+                            <div class="mt-4">
+                                <button type="submit" class="btn-submit-premium" id="submitBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span id="submitText">Submit Application</span>
+                                    <span id="loadingSpinner" style="display: none;">
+                                        <span class="spinner-premium"></span> Submitting...
+                                    </span>
+                                </button>
+                            </div>
+
+                            <p class="text-center mt-3" style="font-size: 13px; color: #999;">
+                                <i class="fas fa-lock"></i> Your information is safe with us
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Form Script -->
+    <script src="src/admission-form.js"></script>
 
 </body>
 

@@ -167,3 +167,11 @@ homeLink.addEventListener("click", function (e) {
     }
 });
 
+document.querySelectorAll('.nav-item.dropdown > .nav-link.dropdown-toggle').forEach(link => {
+    link.addEventListener('click', function (e) {
+        if (window.innerWidth > 991) {
+            e.preventDefault();
+            window.location.href = this.getAttribute('href');
+        }
+    });
+});
