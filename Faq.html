@@ -298,15 +298,8 @@
 }
 
 .faq-premium-item {
-    background: white;
-    border-radius: 16px;
-    padding: 20px 24px;
-    border: 1px solid #eef2f7;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: none;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    overflow: visible !important;
+    height: auto !important;
 }
 
 .faq-premium-item::before {
@@ -405,20 +398,23 @@
     background: #F97316;
     color: white;
 }
-
 .faq-premium-item .faq-answer {
-    padding: 12px 0 4px 50px;
-    font-size: 15px;
-    color: #475569;
-    line-height: 1.8;
     display: none;
-    border-top: 1px solid #f1f5f9;
-    margin-top: 12px;
+    color: #1e293b !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .faq-premium-item .faq-answer.open {
-    display: block;
-    animation: answerExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    display: block !important;
+    color: #1e293b !important;
+    background: #ffffff !important;
+    padding: 18px 20px 18px 50px;
+    border-top: 2px solid #F97316;
 }
 
 @keyframes answerExpand {
@@ -585,26 +581,42 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle active"
-       href="/index.html"
-       id="homeDropdown"
-       role="button"
-       data-bs-toggle="dropdown"
-       aria-expanded="false">
-        Home
-    </a>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="/index.html" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
 
-    <ul class="dropdown-menu shadow border-0 rounded-3">
-        <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
-        <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a></li>
-        <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
-        <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
-    <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
-    </ul>
-</li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                        <ul class="dropdown-menu shadow border-0 rounded-3">
+                            <li><a class="dropdown-item" href="./Pages/Home/Announcements.html">Announcements</a></li>
+                            <li><a class="dropdown-item" href="./Pages/Home/rankings.html">Rankings & Recognition</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./Pages/Home/LpuNumber.html">LPU IN NUMBERS</a></li>
+                            <li><a class="dropdown-item" href="./Pages/Home/degree.html">Your Dream Degree</a></li>
+                            <li><a class="dropdown-item" href="./Pages/Home/toppers.html">Top Performers</a></li>
+                        </ul>
+                    </li>
+                      <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Courses
+            </a>
+
+            <ul class="dropdown-menu shadow border-0 rounded-3" aria-labelledby="coursesDropdown">
+              <li>
+                <a class="dropdown-item" href="courses.html">
+                  Distance Education
+                </a>
+              </li>
+
+              <li>
+               <a class="dropdown-item" href="/onlineEduction.html">
+                  Online Education
+                </a>
+              </li>
+            </ul>
+          </li>
                     <li class="nav-item"><a class="nav-link" href="universities.html">Universities</a></li>
                     <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
                     <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
@@ -859,9 +871,12 @@
         });
     </script>
 
-    <script>
-    // ---------- DATA ----------
-   // ---------- PREMIUM ENGLISH FAQ DATA ----------
+<script>
+// ============================================================
+// PREMIUM FAQ SECTION - COMPLETE WORKING JAVASCRIPT
+// ============================================================
+
+// ---------- FAQ DATA ----------
 const faqData = [
     // ===== GENERAL INFORMATION =====
     { category: "General Information", q: "Where is Lovely Professional University (LPU) located?", a: "LPU is located on the Jalandhar-Delhi GT Road, Phagwara, Punjab, India - 144411." },
@@ -963,13 +978,25 @@ const faqData = [
     { category: "LPU vs Other Universities", q: "LPU vs VIT - comparison?", a: "Both are top private universities; VIT is stronger in South India." },
     { category: "LPU vs Other Universities", q: "LPU vs BITS Pilani?", a: "BITS Pilani is a premier institute but LPU is more affordable with great infrastructure." }
 ];
-   const categoryBtns = document.getElementById('categoryBtns');
+
+// ============================================================
+// DOM ELEMENTS
+// ============================================================
+const categoryBtns = document.getElementById('categoryBtns');
 const faqList = document.getElementById('faqList');
 const noFaq = document.getElementById('noFaq');
 const searchInput = document.getElementById('faqSearchInput');
+const faqTotalCount = document.getElementById('faqTotalCount');
 
+// ============================================================
+// STATE VARIABLES
+// ============================================================
 let currentCategory = 'All';
 let searchTerm = '';
+
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
 
 // Get unique categories with count
 function getCategories() {
@@ -980,7 +1007,11 @@ function getCategories() {
     return map;
 }
 
-// Render buttons
+// ============================================================
+// RENDER FUNCTIONS
+// ============================================================
+
+// Render category buttons
 function renderButtons() {
     const catMap = getCategories();
     let html = `<button class="cat-btn active" data-category="All">All <span class="cat-count">${faqData.length}</span></button>`;
@@ -989,19 +1020,24 @@ function renderButtons() {
     }
     categoryBtns.innerHTML = html;
 
-    // Event listeners
+    // Add click event listeners to category buttons
     document.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+            // Remove active class from all buttons
             document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
             this.classList.add('active');
+            // Update current category
             currentCategory = this.dataset.category;
+            // Re-render FAQs
             renderFaqs();
         });
     });
 }
 
-// Render FAQs
+// Render FAQ items
 function renderFaqs() {
+    // Filter data based on category and search term
     let filtered = faqData;
     
     // Filter by category
@@ -1009,7 +1045,7 @@ function renderFaqs() {
         filtered = filtered.filter(item => item.category === currentCategory);
     }
     
-    // Filter by search
+    // Filter by search term
     if (searchTerm.trim() !== '') {
         const term = searchTerm.toLowerCase().trim();
         filtered = filtered.filter(item => 
@@ -1018,29 +1054,38 @@ function renderFaqs() {
         );
     }
 
-    if (filtered.length === 0) {
-        faqList.innerHTML = '';
-        noFaq.classList.add('show');
-        document.getElementById('faqTotalCount').textContent = '0';
-        return;
-    } else {
-        noFaq.classList.remove('show');
-        document.getElementById('faqTotalCount').textContent = filtered.length;
+    // Update total count
+    if (faqTotalCount) {
+        faqTotalCount.textContent = filtered.length;
     }
 
+    // Show/hide no results message
+    if (filtered.length === 0) {
+        faqList.innerHTML = '';
+        if (noFaq) noFaq.classList.add('show');
+        return;
+    } else {
+        if (noFaq) noFaq.classList.remove('show');
+    }
+
+    // Generate HTML for FAQ items
     let html = '';
     filtered.forEach((item, index) => {
+        // Escape HTML special characters in question and answer
+        const safeQ = item.q.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const safeA = item.a.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        
         html += `
             <div class="faq-premium-item visible" data-index="${index}">
                 <div class="faq-question" onclick="toggleAnswer(this)">
                     <span class="q-icon">Q</span>
-                    <span class="q-text">${item.q}</span>
+                    <span class="q-text">${safeQ}</span>
                     <span class="q-toggle">
                         <i class="fas fa-chevron-down"></i>
                     </span>
                 </div>
                 <div class="faq-answer">
-                    <span class="a-icon">✅</span> ${item.a}
+                    <span class="a-icon">✅</span> ${safeA}
                 </div>
             </div>
         `;
@@ -1048,34 +1093,94 @@ function renderFaqs() {
     faqList.innerHTML = html;
 }
 
-// Toggle answer
-function toggleAnswer(element) {
+// ============================================================
+// TOGGLE ANSWER FUNCTION (GLOBAL)
+// ============================================================
+
+window.toggleAnswer = function(element) {
+    // Safety check
+    if (!element) return;
+    
     const answer = element.nextElementSibling;
     const toggle = element.querySelector('.q-toggle i');
     
+    // Safety check
+    if (!answer || !toggle) return;
+    
+    // Toggle the clicked answer
     if (answer.classList.contains('open')) {
+        // Close this answer
         answer.classList.remove('open');
         toggle.className = 'fas fa-chevron-down';
     } else {
         // Close all other answers
         document.querySelectorAll('.faq-answer.open').forEach(el => {
             el.classList.remove('open');
-            el.previousElementSibling.querySelector('.q-toggle i').className = 'fas fa-chevron-down';
+            const prevToggle = el.previousElementSibling?.querySelector('.q-toggle i');
+            if (prevToggle) {
+                prevToggle.className = 'fas fa-chevron-down';
+            }
         });
+        
+        // Open this answer
         answer.classList.add('open');
         toggle.className = 'fas fa-chevron-up';
     }
+};
+
+// ============================================================
+// SEARCH FUNCTIONALITY
+// ============================================================
+
+if (searchInput) {
+    searchInput.addEventListener('input', function() {
+        searchTerm = this.value;
+        renderFaqs();
+    });
 }
 
-// Search functionality
-searchInput.addEventListener('input', function() {
-    searchTerm = this.value;
-    renderFaqs();
+// ============================================================
+// KEYBOARD SHORTCUTS (Optional Enhancement)
+// ============================================================
+
+document.addEventListener('keydown', function(e) {
+    // Ctrl + F or Cmd + F to focus search
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+        if (searchInput) {
+            e.preventDefault();
+            searchInput.focus();
+        }
+    }
+    // Escape key to clear search
+    if (e.key === 'Escape' && searchInput) {
+        if (document.activeElement === searchInput) {
+            searchInput.value = '';
+            searchTerm = '';
+            renderFaqs();
+            searchInput.blur();
+        }
+    }
 });
 
-// Init
-renderButtons();
-renderFaqs();
+// ============================================================
+// INITIALIZE
+// ============================================================
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    renderButtons();
+    renderFaqs();
+    console.log('✅ FAQ Section Initialized Successfully!');
+    console.log(`📚 Total FAQs: ${faqData.length}`);
+    console.log(`🏷️ Total Categories: ${getCategories().size}`);
+});
+
+// Fallback initialization if DOM already loaded
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    renderButtons();
+    renderFaqs();
+    console.log('✅ FAQ Section Initialized (Fallback)');
+}
 </script>
 
 
