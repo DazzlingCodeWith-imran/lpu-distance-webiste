@@ -1,0 +1,417 @@
+/* ========================================
+   PREMIUM ADMISSION FORM STYLES
+   ======================================== */
+
+/* ---- Modal Premium Styling ---- */
+.modal-content {
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: modalSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---- Modal Header with Gradient ---- */
+.modal-header {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 50%, #FFA500 100%);
+    color: white;
+    padding: 25px 35px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: headerGlow 4s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(10deg); }
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-header .modal-title i {
+    margin-right: 12px;
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* ---- Modal Body ---- */
+.modal-body {
+    padding: 35px 40px;
+    background: #fafafa;
+}
+
+/* ---- Form Fields Premium Style ---- */
+.form-control, .form-select {
+    border-radius: 12px;
+    padding: 14px 18px;
+    border: 2px solid #e8edf2;
+    background: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #FF6B00;
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+    transform: translateY(-1px);
+}
+
+.form-control:hover, .form-select:hover {
+    border-color: #FF8C00;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.08);
+}
+
+.form-control::placeholder {
+    color: #aab3bf;
+    font-size: 14px;
+}
+
+/* ---- Form Labels ---- */
+.form-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a2332;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-label .required-star {
+    color: #FF6B00;
+    font-size: 18px;
+}
+
+/* ---- Premium Submit Button ---- */
+.btn-submit-premium {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 50%, #FFA500 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 30px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.35);
+}
+
+.btn-submit-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.btn-submit-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.45);
+}
+
+.btn-submit-premium:hover::before {
+    left: 100%;
+}
+
+.btn-submit-premium:active {
+    transform: translateY(0px);
+}
+
+.btn-submit-premium:disabled {
+    opacity: 0.7;
+    transform: none;
+    cursor: not-allowed;
+}
+
+.btn-submit-premium i {
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-submit-premium:hover i {
+    transform: translateX(4px);
+}
+
+/* ---- Form Input Icons ---- */
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon-wrapper .form-control,
+.input-icon-wrapper .form-select {
+    padding-left: 45px;
+}
+
+.input-icon-wrapper .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF6B00;
+    font-size: 18px;
+    opacity: 0.6;
+    transition: all 0.3s;
+}
+
+.input-icon-wrapper:focus-within .input-icon {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ---- Success Message Premium ---- */
+#successMessage {
+    text-align: center;
+    padding: 40px 20px;
+    animation: successPop 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes successPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#successMessage .success-icon {
+    font-size: 72px;
+    color: #28a745;
+    margin-bottom: 20px;
+    animation: successBounce 1s ease-in-out infinite;
+}
+
+@keyframes successBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+#successMessage h3 {
+    color: #1a2332;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#successMessage p {
+    color: #6c757d;
+    font-size: 16px;
+}
+
+/* ---- Loading Spinner ---- */
+.spinner-premium {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spinnerSpin 0.8s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spinnerSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .modal-body {
+        padding: 25px 20px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-header .modal-title {
+        font-size: 20px;
+    }
+    
+    .form-control, .form-select {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+    
+    .btn-submit-premium {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+}
+
+/* ---- Shimmer Effect on Form Load ---- */
+.form-shimmer {
+    animation: shimmerLoad 1s ease-in-out;
+}
+
+@keyframes shimmerLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-shimmer:nth-child(1) { animation-delay: 0.1s; }
+.form-shimmer:nth-child(2) { animation-delay: 0.2s; }
+.form-shimmer:nth-child(3) { animation-delay: 0.3s; }
+.form-shimmer:nth-child(4) { animation-delay: 0.4s; }
+/* Modal Styles */
+.modal-content {
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: modalSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 50%, #FFA500 100%);
+    color: white;
+    padding: 25px 35px;
+    border: none;
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 35px 40px;
+    background: #fafafa;
+}
+
+.btn-submit-premium {
+    background: linear-gradient(135deg, #FF6B00, #FF8C00);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 30px;
+    font-weight: 700;
+    font-size: 18px;
+    width: 100%;
+    transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.35);
+}
+
+.btn-submit-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.45);
+}
+
+.btn-submit-premium:disabled {
+    opacity: 0.7;
+    transform: none;
+}
+
+.spinner-premium {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spinnerSpin 0.8s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spinnerSpin {
+    to { transform: rotate(360deg); }
+}
+
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon-wrapper .form-control,
+.input-icon-wrapper .form-select {
+    padding-left: 45px;
+}
+
+.input-icon-wrapper .input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF6B00;
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+.required-star {
+    color: #FF6B00;
+    font-size: 18px;
+}
