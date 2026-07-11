@@ -43,7 +43,7 @@
   .scrim{
     position:absolute;inset:0;
     background:
-      linear-gradient(180deg, rgba(8, 20, 38, 0.103) 0%, rgba(8, 20, 38, 0.192) 35%, rgba(8, 20, 38, 0.13) 100%),
+      linear-gradient(180deg, rgba(8, 20, 38, 0.103) 0%, rgba(8, 20, 38, 0.062) 35%, rgba(8, 20, 38, 0) 100%),
       linear-gradient(90deg, rgba(8, 20, 38, 0.082) 0%, rgba(8, 20, 38, 0.082) 42%, rgba(8,20,38,0.15) 75%);
     z-index:1;
   }
