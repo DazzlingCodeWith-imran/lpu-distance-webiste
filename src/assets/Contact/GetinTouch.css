@@ -40,8 +40,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-            rgba(15, 23, 42, 0.92) 0%,
-            rgba(15, 23, 42, 0.75) 40%,
+            rgba(15, 23, 42, 0.205) 0%,
+            rgba(15, 23, 42, 0.13) 40%,
             rgba(249, 115, 22, 0.15) 100%
     );
     z-index: 1;

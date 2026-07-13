@@ -40,9 +40,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-            rgba(15, 23, 42, 0.92) 0%,
-            rgba(15, 23, 42, 0.75) 40%,
-            rgba(249, 115, 22, 0.15) 100%
+            rgba(15, 23, 42, 0.13) 0%,
+            rgba(15, 23, 42, 0.158) 40%,
+            rgba(249, 116, 22, 0.062) 100%
     );
     z-index: 1;
 }

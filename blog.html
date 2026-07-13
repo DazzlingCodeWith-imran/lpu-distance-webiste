@@ -21,6 +21,200 @@
    <link rel="stylesheet" href="/src/assets/Navbar/DropDown.css">
    <link rel="stylesheet" href="src/ApplyNow.css">
 
+   
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f9fafc;
+            color: #1a1e2b;
+        }
+        :root {
+            --orange: hsl(24, 100%, 50%);
+            --orange-light: hsl(24, 100%, 92%);
+            --gray-light: #f1f3f6;
+            --gray-border: #e5e9f0;
+            --white: #ffffff;
+            --text-muted: #5b6778;
+            --shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+        }
+        /* sticky filter + search */
+        .sticky-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: white;
+            border-bottom: 1px solid var(--gray-border);
+            padding: 0.5rem 0;
+            backdrop-filter: blur(2px);
+        }
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.7rem 1.2rem;
+        }
+        .filter-scroll {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 0.2rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            flex: 1 1 auto;
+        }
+        .filter-scroll::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            flex: 0 0 auto;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: var(--gray-light);
+            color: var(--text-muted);
+            border: none;
+            transition: 0.15s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .filter-btn.active {
+            background: var(--orange);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 122, 0, 0.2);
+        }
+        .filter-btn:hover { background: #dce1ea; }
+        .filter-btn.active:hover { background: var(--orange); }
+
+        .search-wrap {
+            flex: 0 0 200px;
+            min-width: 140px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 0.4rem 0.8rem 0.4rem 2rem;
+            border-radius: 40px;
+            border: 1px solid var(--gray-border);
+            background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%235b6778" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>') no-repeat 0.6rem center;
+            background-size: 14px;
+            font-size: 0.85rem;
+            outline: none;
+            transition: 0.2s;
+        }
+        .search-input:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1); }
+
+        /* blog grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 1rem;
+            border: 1px solid var(--gray-border);
+            overflow: hidden;
+            transition: 0.2s;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.03); }
+        .card-top {
+            padding: 1rem 1.2rem 0.2rem;
+            border-bottom: 1px solid transparent;
+        }
+        .card-badge {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 600;
+            padding: 0.15rem 0.9rem;
+            border-radius: 30px;
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
+        }
+        .card-badge.blue { background: #1a5fb4; }
+        .card-body {
+            padding: 0.6rem 1.2rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.3rem;
+        }
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+            margin-bottom: 0.5rem;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--gray-border);
+            padding-top: 0.6rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        .card-meta .left { display: flex; gap: 0.8rem; align-items: center; }
+        .arrow { color: var(--orange); opacity: 0; transition: 0.2s; }
+        .blog-card:hover .arrow { opacity: 1; }
+
+        /* pagination */
+        .pagination-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.35rem;
+            margin: 2rem 0 2.5rem;
+        }
+        .page-btn {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 40px;
+            border: none;
+            background: var(--gray-light);
+            color: #1a1e2b;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: 0.1s;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-btn.active { background: var(--orange); color: white; }
+        .page-btn:hover:not(.active) { background: #dce1ea; }
+
+        /* empty state */
+        .no-posts { text-align: center; padding: 3rem 0; color: var(--text-muted); }
+
+        @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } .search-wrap { flex: 1 1 100%; } }
+    </style>
 </head>
 <body>
   <div id="preloader"><div class="spinner"></div></div>
@@ -37,7 +231,7 @@
                 class="logo-main"
                 alt="LPU Logo">
 
-            <img src="https://www.lpude.in/images/naac-logo.webp"
+            <img src="/src/assets/Logo/NavLOGO/NAACLogo-removebg-preview.png"
                 class="logo-naac"
                 alt="NAAC Logo">
 
@@ -171,7 +365,7 @@
 <section class="blog-banner">
     <!-- Background Image -->
     <div class="blog-banner-bg">
-        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80" 
+        <img src="/HomeImages/SlideImage/blogBanner.png" 
              alt="LPU Distance Blog" loading="lazy" />
         <div class="blog-banner-overlay"></div>
     </div>
@@ -271,85 +465,34 @@
     </div>
   </section>
 
-  <section class="section-padding pt-4">
+ <!-- sticky filter + search -->
+<div class="sticky-toolbar">
     <div class="container">
-      <div class="filter-tabs text-center mb-5" data-aos="fade-up">
-        <button class="btn active" data-filter="all">All</button>
-        <button class="btn" data-filter="learning">Online Learning</button>
-        <button class="btn" data-filter="admissions">Admissions</button>
-        <button class="btn" data-filter="career">Career</button>
-      </div>
-
-      <div class="row g-4" id="blog-grid">
-        <div class="col-lg-4 col-md-6 blog-item" data-category="learning" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-premium entity-card">
-            <img src="src/assets/blog-1.png" alt="5 tips to succeed in online learning" loading="lazy">
-            <div class="entity-body">
-              <p class="entity-meta mb-2"><i class="fas fa-calendar me-1"></i> June 12, 2026</p>
-              <h5>5 Tips to Succeed in Online Learning</h5>
-              <p>Practical strategies to stay motivated and manage your time as a distance-learning student.</p>
-              <a href="#" class="fw-bold text-primary-orange text-decoration-none">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+        <div class="filter-row">
+            <div class="filter-scroll" id="categoryFilter">
+                <button class="filter-btn active" data-cat="all">All Posts</button>
+                <button class="filter-btn" data-cat="programs">Programs</button>
+                <button class="filter-btn" data-cat="admissions">Admissions</button>
+                <button class="filter-btn" data-cat="career">Career</button>
+                <button class="filter-btn" data-cat="comparison">Comparison</button>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 blog-item" data-category="admissions" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-premium entity-card">
-            <img src="src/assets/course-business.png" alt="How to choose the right distance learning program" loading="lazy">
-            <div class="entity-body">
-              <p class="entity-meta mb-2"><i class="fas fa-calendar me-1"></i> May 28, 2026</p>
-              <h5>How to Choose the Right Program</h5>
-              <p>A step-by-step guide to evaluating accreditation, cost, and career fit before you apply.</p>
-              <a href="#" class="fw-bold text-primary-orange text-decoration-none">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+            <div class="search-wrap">
+                <input class="search-input" id="searchInput" type="text" placeholder="Search posts..." />
             </div>
-          </div>
         </div>
-        <div class="col-lg-4 col-md-6 blog-item" data-category="career" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-premium entity-card">
-            <img src="src/assets/placement-success.png" alt="Career growth after an online degree" loading="lazy">
-            <div class="entity-body">
-              <p class="entity-meta mb-2"><i class="fas fa-calendar me-1"></i> May 10, 2026</p>
-              <h5>From Graduate to Hired: A Career Roadmap</h5>
-              <p>What our top-performing graduates did differently to land their first job offer fast.</p>
-              <a href="#" class="fw-bold text-primary-orange text-decoration-none">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 blog-item" data-category="learning" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-premium entity-card">
-            <img src="src/assets/online-learning.png" alt="Building a study routine that works" loading="lazy">
-            <div class="entity-body">
-              <p class="entity-meta mb-2"><i class="fas fa-calendar me-1"></i> April 22, 2026</p>
-              <h5>Building a Study Routine That Actually Works</h5>
-              <p>Balancing work, family, and coursework without burning out.</p>
-              <a href="#" class="fw-bold text-primary-orange text-decoration-none">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 blog-item" data-category="admissions" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-premium entity-card">
-            <img src="src/assets/course-tech.png" alt="Financing your distance education" loading="lazy">
-            <div class="entity-body">
-              <p class="entity-meta mb-2"><i class="fas fa-calendar me-1"></i> April 5, 2026</p>
-              <h5>Financing Your Distance Education</h5>
-              <p>Scholarships, payment plans, and employer sponsorships you may qualify for.</p>
-              <a href="#" class="fw-bold text-primary-orange text-decoration-none">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 blog-item" data-category="career" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-premium entity-card">
-            <img src="src/assets/course-health.png" alt="Healthcare careers in demand" loading="lazy">
-            <div class="entity-body">
-              <p class="entity-meta mb-2"><i class="fas fa-calendar me-1"></i> March 18, 2026</p>
-              <h5>Top In-Demand Healthcare Careers in 2026</h5>
-              <p>Why healthcare-focused distance degrees are seeing record enrollment this year.</p>
-              <a href="#" class="fw-bold text-primary-orange text-decoration-none">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</div>
+
+<section style="padding: 0.5rem 0 1.5rem; background: #f9fafc;">
+    <div class="container">
+
+        <!-- blog grid -->
+        <div class="blog-grid" id="blogGrid"></div>
+
+        <!-- pagination -->
+        <div class="pagination-wrap" id="paginationWrap"></div>
+    </div>
+</section>
 
   <section class="section-padding bg-section-gray">
     <div class="container text-center" data-aos="fade-up">
@@ -376,10 +519,8 @@
         <div class="col-lg-4 mb-4">
  <a class="navbar-brand" href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
 
-    <img src="https://lpudistanceeducation.com/assets/logo-sQ1tFhb1.png"
-         alt="LPU Logo"
-         class="logo-main"
-         style="height:50px; width:auto; object-fit:contain;">
+    <img src="/src/assets/Logo/NavLOGO/images.png" alt="LPU Logo"
+                            class="logo-main" style="height:60px; width:auto; object-fit:contain;">
 
 
 
@@ -421,173 +562,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="src/script.js"></script>
-  <!-- Apply Now Modal - Premium Version -->
-     <section>
-    <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <!-- Header -->
-          <div class="modal-header">
-            <h5 class="modal-title" id="applyModalLabel">
-              <i class="fas fa-graduation-cap"></i>
-              Start Your Journey With LPU
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+  <script src="/src/assets/Javascript/Blog/Blog.js"></script>
 
-          <!-- Body -->
-          <div class="modal-body">
-            <!-- Success Message -->
-            <div id="successMessage" style="display: none;">
-              <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <h3>🎉 Application Submitted!</h3>
-              <p>Our admission counselor will contact you within 24 hours.</p>
-              <p style="font-size: 14px; color: #999; margin-top: 15px;">
-                <i class="fas fa-phone"></i> For urgent queries: +91-1234567890
-              </p>
-            </div>
-
-            <!-- Form -->
-            <form id="applicationForm">
-              <div class="row g-4">
-                <!-- Full Name -->
-                <div class="col-md-6 form-shimmer">
-                  <label class="form-label">
-                    <i class="fas fa-user"></i> Full Name
-                    <span class="required-star">*</span>
-                  </label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-user input-icon"></i>
-                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
-                  </div>
-                  <div class="invalid-feedback">Please enter your full name</div>
-                </div>
-
-                <!-- Email -->
-                <div class="col-md-6 form-shimmer">
-                  <label class="form-label">
-                    <i class="fas fa-envelope"></i> Email Address
-                    <span class="required-star">*</span>
-                  </label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-envelope input-icon"></i>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                  </div>
-                  <div class="invalid-feedback">Please enter a valid email</div>
-                </div>
-
-                <!-- Mobile -->
-                <div class="col-md-6 form-shimmer">
-                  <label class="form-label">
-                    <i class="fas fa-phone"></i> Mobile Number
-                    <span class="required-star">*</span>
-                  </label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-phone input-icon"></i>
-                    <input type="tel" class="form-control" id="mobile" placeholder="10-digit mobile number" required
-                      maxlength="10">
-                  </div>
-                  <div class="invalid-feedback">Enter a valid 10-digit mobile number</div>
-                </div>
-
-                <!-- City -->
-                <div class="col-md-6 form-shimmer">
-                  <label class="form-label">
-                    <i class="fas fa-city"></i> City
-                  </label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-map-marker-alt input-icon"></i>
-                    <input type="text" class="form-control" id="city" placeholder="Enter your city">
-                  </div>
-                </div>
-
-                <!-- Course (All your courses) -->
-                <div class="col-md-6 form-shimmer">
-                  <label class="form-label">
-                    <i class="fas fa-book-open"></i> Course Interest
-                    <span class="required-star">*</span>
-                  </label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-graduation-cap input-icon"></i>
-                    <select class="form-select" id="course" required>
-                      <option value="">Select a course</option>
-                      <option value="mba">MBA — Master of Business Administration</option>
-                      <option value="mca">MCA — Master of Computer Applications</option>
-                      <option value="mcom">M.Com — Master of Commerce</option>
-                      <option value="msc-it">M.Sc. IT — M.Sc. Information Technology</option>
-                      <option value="ma-english">MA English — M.A. English</option>
-                      <option value="ma-history">MA History — M.A. History</option>
-                      <option value="ma-hindi">MA Hindi — M.A. Hindi</option>
-                      <option value="ma-punjabi">MA Punjabi — M.A. Punjabi</option>
-                      <option value="ma-polsci">MA Pol. Sci. — M.A. Political Science</option>
-                      <option value="ma-mathematics">MA Maths — M.A. Mathematics</option>
-                      <option value="ma-sociology">MA Sociology — M.A. Sociology</option>
-                      <option value="ma-education">MA Education — M.A. Education</option>
-                      <option value="ma-economics">MA Economics — M.A. Economics</option>
-                      <option value="mlis">MLIS — Master of Library &amp; Information Science
-                      </option>
-                      <option value="bba">BBA — Bachelor of Business Administration</option>
-                      <option value="bca">BCA — Bachelor of Computer Applications</option>
-                      <option value="bcom">B.Com — Bachelor of Commerce</option>
-                      <option value="bsc-it">B.Sc. IT — B.Sc. Information Technology</option>
-                      <option value="ba">BA — Bachelor of Arts</option>
-                      <option value="blis">BLIS — Bachelor of Library &amp; Information Science
-                      </option>
-                      <option value="dba">DBA — Diploma in Business Administration</option>
-                      <option value="dca">DCA — Diploma in Computer Applications</option>
-                      <option value="dlis">DLIS — Diploma in Library &amp; Information Science
-                      </option>
-                    </select>
-                  </div>
-                  <div class="invalid-feedback">Please select a course</div>
-                </div>
-
-                <!-- Qualification -->
-                <div class="col-md-6 form-shimmer">
-                  <label class="form-label">
-                    <i class="fas fa-trophy"></i> Highest Qualification
-                  </label>
-                  <div class="input-icon-wrapper">
-                    <i class="fas fa-certificate input-icon"></i>
-                    <select class="form-select" id="qualification">
-                      <option value="">Select qualification</option>
-                      <option value="10th">10th Pass</option>
-                      <option value="12th">12th Pass</option>
-                      <option value="graduate">Graduate</option>
-                      <option value="post-graduate">Post Graduate</option>
-                      <option value="phd">PhD</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Error Message -->
-              <div id="formError" class="alert alert-danger mt-4" style="display: none; border-radius: 12px;"></div>
-
-              <!-- Submit Button -->
-              <div class="mt-4">
-                <button type="submit" class="btn-submit-premium" id="submitBtn">
-                  <i class="fas fa-paper-plane"></i>
-                  <span id="submitText">Submit Application</span>
-                  <span id="loadingSpinner" style="display: none;">
-                    <span class="spinner-premium"></span> Submitting...
-                  </span>
-                </button>
-              </div>
-
-              <p class="text-center mt-3" style="font-size: 13px; color: #999;">
-                <i class="fas fa-lock"></i> Your information is safe with us
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Admission Form Script -->
-  <script src="src/admission-form.js"></script>
 </body>
 </html>
