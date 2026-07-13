@@ -13,7 +13,7 @@
         },
          { id: 2, title: "BCA Distance Education in Punjab — Syllabus, Eligibility & Jobs", desc: "Start your IT career with BCA distance education in Punjab. Learn about syllabus, eligibility, fees, and job opportunities after BCA from LPU.", date: "2026-02-28", read: "11 min", category: "programs",url:"/Pages/Blog/bca-distance-education-punjab.html" },
         
-        { id: 3, title: "LPU BA Distance Education in Mandi — 2026 Guide", desc: "Complete guide to LPU BA Distance Education in Mandi — fees, eligibility, career scope, and how to enroll from Mandi, Himachal Pradesh.", date: "2026-02-11", read: "7 min", category: "programs"},
+        { id: 3, title: "LPU BA Distance Education in Mandi — 2026 Guide", desc: "Complete guide to LPU BA Distance Education in Mandi — fees, eligibility, career scope, and how to enroll from Mandi, Himachal Pradesh.", date: "2026-02-11", read: "7 min", category: "programs",url:"/Pages/Blog/ba-distance-education-mandi.html"},
 
 
 

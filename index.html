@@ -1705,7 +1705,8 @@
                     </div>
                     <div class="uni-card-body">
                         <div class="uni-card-meta">
-                            <span class="uni-card-icon"><i class="fas fa-flag-india"></i></span>
+                            <span class="uni-card-icon"><i class="fas fa-globe-asia"></i>
+</span>
                             <span class="uni-card-category">Diversity</span>
                         </div>
                         <h3 class="uni-card-title">One India 2025 Cultural Extravaganza</h3>
@@ -2788,7 +2789,40 @@
 
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
 
+    faqItems.forEach(item => {
+        const question = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        question.addEventListener("click", function () {
+
+            // Close all other FAQs
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove("active");
+                    otherItem.querySelector(".faq-question")
+                        .setAttribute("aria-expanded", "false");
+                    otherItem.querySelector(".faq-answer").style.maxHeight = null;
+                }
+            });
+
+            // Toggle current FAQ
+            item.classList.toggle("active");
+
+            if (item.classList.contains("active")) {
+                question.setAttribute("aria-expanded", "true");
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                question.setAttribute("aria-expanded", "false");
+                answer.style.maxHeight = null;
+            }
+        });
+    });
+});
+</script>
 
 
 
