@@ -2,7 +2,7 @@
     position: relative;
     padding: 120px 0;
     overflow: hidden;
-    background: url("https://happenings.lpu.in/wp-content/uploads/2019/06/LPu1.png") center center/cover no-repeat;
+    background: url("/HomeImages/About/Banner.png") center center/cover no-repeat;
 }
 
 .banner-overlay{
@@ -23,13 +23,12 @@
     padding:55px;
     border-radius:24px;
 
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(14px);
+   
+    backdrop-filter:blur(6px);
 
     border:1px solid rgba(255,255,255,.18);
 
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.35);
+  
 }
 
 .banner-tag{

@@ -40,7 +40,7 @@
    ============================================================ */
 .hero-banner {
     position: relative;
-    top: 20px;
+
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -74,9 +74,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg,
-            rgba(15, 23, 42, 0.92) 0%,
-            rgba(15, 23, 42, 0.75) 40%,
-            rgba(249, 115, 22, 0.15) 100%
+            rgba(15, 23, 42, 0.336) 0%,
+            rgba(15, 23, 42, 0.205) 40%,
+            rgba(249, 116, 22, 0) 100%
     );
     z-index: 1;
 }
